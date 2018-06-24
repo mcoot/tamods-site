@@ -1,5 +1,5 @@
 {
   "developer": {
-    "Overview": ["doc_dev_intro"]
+    "Introduction": ["doc_dev_intro", "doc_dev_tute_script", "doc_dev_tute_hudmodule"]
   }
 }
