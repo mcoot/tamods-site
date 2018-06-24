@@ -29,6 +29,6 @@ Hence if you want to write custom scripts for TAMods, you will probably do so in
 1. By adding code in `custom.lua` (or writing scripts in files `require`d by `custom.lua`).
 2. If creating a custom HUD component, by writing HUDModules in the Ubermenu preset.
 
-To get started, walk through the tutorial for writing your first custom script here LINK. You can also learn how to write your first HUDModule here LINK.
+To get started, walk through the tutorial for writing your first custom script [here](doc_dev_tute_script.md). You can also learn how to write your first HUDModule [here](doc_dev_tute_hudmodule.md).
 
-An API reference for the Lua API is available here LINK.
+An API reference for the Lua API is available [here](doc_dev_api_overview.md).
