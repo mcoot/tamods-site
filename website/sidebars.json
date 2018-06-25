@@ -1,5 +1,6 @@
 {
   "developer": {
-    "Introduction": ["doc_dev_intro", "doc_dev_tute_script", "doc_dev_tute_hudmodule"]
+    "Introduction": ["doc_dev_intro", "doc_dev_tute_script", "doc_dev_tute_hudmodule"],
+    "API Reference": ["doc_dev_api_overview", "doc_dev_api_datatypes",  "doc_dev_api_drawing"]
   }
 }
