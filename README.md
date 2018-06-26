@@ -8,5 +8,6 @@ Using https://docusaurus.io
 
 ```
 cd website
+npm install
 yarn start
 ```
