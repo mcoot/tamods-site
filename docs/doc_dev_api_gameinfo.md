@@ -10,13 +10,13 @@ Information about the ongoing game is available under the namespaces `game`, `pl
 
 The `enums` namespace contains constants and useful enumerations, including the following enumerations of game information values.
 
-### Teams enum
+### Team enum
 
 Enumerates the possible values for a team number.
 
 - `enums.TEAM_BLOOD_EAGLE` = 0
 - `enums.TEAM_DIAMOND_SWORD` = 1
-- `enums.TEAM_SPECTATOR` = 255
+- `enums.TEAM_SPECTATOR` = 255 - used as a catch-all (for instance, Private Messages are considered to come from the Spectator team)
 
 ### EquipPoint enum
 

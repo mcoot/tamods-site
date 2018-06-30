@@ -1,43 +1,8 @@
 ---
 id: doc_dev_api_datatypes
-title: Data Types
-sidebar_label: Data Types
+title: Miscellaneous Data Types
+sidebar_label: Miscellaneous Data Types
 ---
-
-## Color
-
-The `Color` type has the following properties:
-
-| Property | Type            | Description                            |
-|----------|-----------------|----------------------------------------|
-| `r`      | integer (0-255) | Red component of the color             |
-| `g`      | integer (0-255) | Green component of the color           |
-| `b`      | integer (0-255) | Blue component of the color            |
-| `a`      | integer (0-255) | Alpha (opacity) component of the color |
-
-#### Associated functions
-
-`rgba(r: integer, g: integer, b: integer, a: integer): Color`
-
-Constructs a `Color` with the given components.
-
-`rgb(r: integer, g: integer, b: integer): Color`
-
-Constructs a `Color` with full opacity (`a == 255`) and the given components.
-
-`lerpColor(c1: Color, c2: Color: alpha: float): Color`
-
-Linearly interpolates between colors `c1` and `c2`. The `alpha` parameter is a float between `0` and `1` determines the proportions: `0` gives 100% of `c1`, and `1` gives 100% of `c2`.
-
-#### Example
-
-```lua
-c1 = rgba(255, 0, 0, 128)
-c2 = rgb(0, 0, 255)
-c3 = lerpColor(c1, c2, 0.5)
-console("Color c3 has values (r: " .. c3.r .. ", g:" .. c3.g .. ", b:" .. c3.b .. ", a:" .. c3.a .. ")")
-console("AND IT GIVES YOU NICE PURPLE TEXT", c3)
-```
 
 ## Vector2
 
@@ -72,7 +37,7 @@ v3 = addVector2s(v1, v2)
 
 ## Vector4
 
-`Vector4` represents a 4D vector, and has the constructor function `Vector4(x: float, y: float, z: float, w: float): Vector4`..
+`Vector4` represents a 4D vector, and has the constructor function `Vector4(x: float, y: float, z: float, w: float): Vector4`.
 
 | Property | Type  | Description               |
 |----------|-------|---------------------------|
@@ -81,21 +46,66 @@ v3 = addVector2s(v1, v2)
 | `z`      | float | Z component of the vector |
 | `w`      | float | W component of the vector |
 
+## DamageNumber Class
+
+`DamageNumber` represents a damage number. Has the constructor function `DamageNumber(number: integer, persistTime: float, location: FVector4, isShield: boolean)`
+
+#### Properties
+
+| Property       | Type     | Description                                              |
+|----------------|----------|----------------------------------------------------------|
+| `number`       | integer  | The number value of the damage                           |
+| `time`         | float    | The remaining time this damage number should persist for |
+| `location`     | FVector4 | The world-space location of the damage number            |
+| `color`        | Color    | The current colour of the damage number                  |
+| `scale`        | float    | The current scale of the damage number (1.0 = normal)    |
+| `shieldDamage` | boolean  | Whether the damage number represents shield damage       |
+
+## DamageNumberArray class
+
+`DamageNumberArray` represents a C++ array of damage numbers. 
+
+#### Methods
+
+`DamageNumberArray:add(item: DamageNumber)`
+
+Adds an item to the array.
+
+`DamageNumberArray:remove(index: integer)`
+
+Removes the item at the given index.
+
+`DamageNumberArray:clear()`
+
+Clears all elements from the array.
+
+`DamageNumberArray:size(): integer`
+
+Gets the number of elements in the array.
+
+`DamageNumberArray:get(index: integer): DamageNumber`
+
+Gets the element at the given index.
+
+`DamageNumberArray:set(index: integer, item: DamageNumber)`
+
+Sets the element at the given index.
+
 ## Object
 
 `Object` represents a generic Unreal Engine object.
 
 #### Methods
 
-`Object.getName(): string`
+`Object:getName(): string`
 
 Gets the name of this object.
 
-`Object.getClassName(): string`
+`Object:getClassName(): string`
 
 Gets the name of this object's class.
 
-`Object.getFullName(): string`
+`Object:getFullName(): string`
 
 Gets the full Unreal name for this object.
 
@@ -105,26 +115,26 @@ Gets the full Unreal name for this object.
 
 #### Methods
 
-`FloatArray.add(item: float)`
+`FloatArray:add(item: float)`
 
 Adds an item to the array.
 
-`FloatArray.remove(index: integer)`
+`FloatArray:remove(index: integer)`
 
 Removes the item at the given index.
 
-`FloatArray.clear()`
+`FloatArray:clear()`
 
 Clears all elements from the array.
 
-`FloatArray.size(): integer`
+`FloatArray:size(): integer`
 
 Gets the number of elements in the array.
 
-`FloatArray.get(index: integer): float`
+`FloatArray:get(index: integer): float`
 
 Gets the element at the given index.
 
-`FloatArray.set(index: integer, item: float)`
+`FloatArray:set(index: integer, item: float)`
 
 Sets the element at the given index.
