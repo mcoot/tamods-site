@@ -6,7 +6,65 @@ sidebar_label: Game Information
 
 Information about the ongoing game is available under the namespaces `game`, `player`, `weapon`, `currentWeapon`, `vehicle`, `flag`, `arena`, `rabbit`, and `cah`.
 
+## Enums
+
+The `enums` namespace contains constants and useful enumerations, including the following enumerations of game information values.
+
+### Teams enum
+
+Enumerates the possible values for a team number.
+
+- `enums.TEAM_BLOOD_EAGLE` = 0
+- `enums.TEAM_DIAMOND_SWORD` = 1
+- `enums.TEAM_SPECTATOR` = 255
+
+### EquipPoint enum
+
+Enumerates the possible values for an equipment slot.
+
+- `enums.EQUIPMENT_NONE`= 0 - null/invalid equipment slot
+- `enums.EQUIPMENT_MELEE` = 1 - melee slot
+- `enums.EQUIPMENT_PRIMARY` = 2 - first weapon slot
+- `enums.EQUIPMENT_SECONDARY` = 3 - second weapon slot
+- `enums.EQUIPMENT_TERTIARY` = 4 - third weapon slot
+- `enums.EQUIPMENT_QUARTERNARY` = 5 - fourth weapon slot (no classes currently have a fourth weapon)
+- `enums.EQUIPMENT_PACK` = 6 - pack item slot
+- `enums.EQUIPMENT_BELT` = 7 - belt item slot
+- `enums.EQUIPMENT_DEPLOYABLE` = 8 - deployed deployable slot
+- `enums.EQUIPMENT_LASERTARGET` = 9 - laser targetter slot  
+
+### ReticuleType enum
+
+Enumerates the possible types of reticule / crosshair.
+
+- `enums.RETICULE_TYPE_SPINFUSOR`
+- `enums.RETICULE_TYPE_SMG`
+- `enums.RETICULE_TYPE_RIFLE`
+- `enums.RETICULE_TYPE_LOCKED_ON`
+- `enums.RETICULE_TYPE_CROSSBOW`
+- `enums.RETICULE_TYPE_FLAMETHROWER`
+- `enums.RETICULE_TYPE_CHAINGUN`
+- `enums.RETICULE_TYPE_THUMPER`
+- `enums.RETICULE_TYPE_NANITE`
+- `enums.RETICULE_TYPE_SHOTGUN`
+- `enums.RETICULE_TYPE_UNKNOWN`
+- `enums.RETICULE_TYPE_LASER`
+- `enums.RETICULE_TYPE_CH_V13`
+- `enums.RETICULE_TYPE_SCOPE`
+- `enums.RETICULE_TYPE_PISTOL`
+- `enums.RETICULE_TYPE_GRENADE_LAUNCHER`
+- `enums.RETICULE_TYPE_MELEE`
+- `enums.RETICULE_TYPE_SHRIKE`
+- `enums.RETICULE_TYPE_SPECTATOR`
+- `enums.RETICULE_TYPE_CHAIN`
+- `enums.RETICULE_TYPE_BXT1`
+- `enums.RETICULE_TYPE_PHASE`
+- `enums.RETICULE_TYPE_SAP20`
+- `enums.RETICULE_TYPE_PLASMA`
+
 ## Game
+
+Provides information about the current on-going game.
 
 `game.type(): string `
 
@@ -88,6 +146,8 @@ Gives a result of the form: `(3) player1, player2, player3`.
 
 ## Player
 
+Provides information about the player.
+
 `player.name(): string`
 
 Gets the current player's name.
@@ -110,7 +170,7 @@ Returns true if the player is currently in a vehicle.
 
 `player.teamNum(): Team`
 
-Get the player's team number (see [Data Types](doc_dev_api_datatypes.md) for enum definition).
+Get the player's team (see the Team enum definition).
 
 `player.kills(): integer`
 
@@ -190,9 +250,11 @@ Returns true if the player has the flag.
 
 ## Weapon
 
+Provides information about the player's weapon loadout.
+
 `weapon.name(eqp: EquipPoint): string`
 
-Returns the name of the weapon equipped at EquipPoint `eqp` (see [Data Types](doc_dev_api_datatypes.md) for enum definition).
+Returns the name of the weapon equipped at EquipPoint `eqp` (see the EquipPoint enum definition.
 
 `weapon.isPack(eqp: EquipPoint): boolean`
 
@@ -244,7 +306,7 @@ Gets the total amount of current ammo, including the current clip and spare ammo
 
 ## CurrentWeapon
 
-currentWeapon applies to whatever weapon the player is currently using.
+Provides information about the weapon the player is currently using.
 
 `currentWeapon.name(): string`
 
@@ -256,16 +318,183 @@ Get the equip point of the current weapon.
 
 `currentWeapon.reticuleIndex(): ReticuleType`
 
-`currentWeapon.isPack()`
+Gets the reticule type for the current weapon (see the ReticuleType enum definition).
+
+`currentWeapon.isPack(): boolean`
 
 Returns true if the current weapon is a pack item.
 
+`currentWeapon.reloadTime(): float`
+
+Get the reload time (in seconds), if the weapon is reloaded partway through a clip.
+
+`currentWeapon.reloadTimeFull(): float`
+
+Get the reload time (in seconds), if the weapon is reloaded at the end of a clip.
+
+`currentWeapon.isReadyToFire(): boolean`
+
+Returns true if the weapon is finished reloading and is ready to fire.
+
+`currentWeapon.isReloading(): boolean`
+
+Returns true if the weapon is currently reloading.
+
+`currentWeapon.isReloaded(): boolean`
+
+Returns true if the weapon has completed reloading. Note that for many weapons this happens _before_ the end of the animation (when the weapon becomes Ready To Fire). If `isReloaded()` is true but `isReadyToFire()` is false, then the weapon can be reload-cancelled.
+
+`currentWeapon.isLowAmmo(): boolean`
+
+Returns true if the weapon is low on ammo.
+
+`currentWeapon.ammo(): integer`
+
+Gets the amount of ammo left in the clip.
+
+`currentWeapon.ammoMax(): integer`
+
+Gets the total size of the clip.
+
+`currentWeapon.ammoCarried(): integer`
+
+Gets the amount of spare ammo, not including the current clip.
+
+`currentWeapon.ammoMaxCarried(): integer`
+
+Gets the maximum amount of spare ammo, not including the initial full clip.
+
+`currentWeapon.ammoTotal(): integer`
+
+Gets the total amount of current ammo, including the current clip and spare ammo.
+
+
 ## Vehicle
+
+Provides information about the vehicle the player is currently piloting. Will not provide useful information if the player is not in a vehicle.
+
+`vehicle.name(): string`
+
+Gets the name of the current vehicle (`"Grav Cycle"`, `"Beowulf"`, or `"Shrike"`).
+
+`vehicle.seatName(): string`
+
+Gets the name of the seat in the vehicle the player is occupying (`"Pilot"`, `"Gunner"`, or `"Passenger"`).
+
+`vehicle.seatIndex(): string`
+
+Gets the index number of the seat the player is occupying.
+
+`vehicle.seatCount(): int`
+
+Gets the number of seats the vehicle has.
+
+`vehicle.health(): integer`
+
+Gets the current health of the vehicle.
+
+`vehicle.healthMax(): integer`
+
+Gets the maximum health of the vehicle.
+
+`vehicle.energyPct(): float`
+
+Gets the vehicle's current energy as a percentage of the total.
+
+`vehicle.ammo(): integer`
+
+Gets the amount of ammo the vehicle's weapon currently has.
+
+`vehicle.ammoMax(): integer`
+
+Gets the maximum ammo for the vehicle.
+
+`vehicle.speed(): integer`
+
+Gets the vehicle's current speed.
 
 ## Flag
 
+Provides information about the flag in CTF.
+
+`flag.isHome(teamNum: Team): boolean`
+
+Returns true if the given team's flag is currently on its stand.
+
+`flag.returnTime(teamNum: Team): integer`
+
+Gets the number of seconds before the flag returns (`0` if flag is not loose in field).
+
+`flag.holderName(teamNum: Team): string`
+
+Gets the name of the player holding the given team's flag (`""` if the flag is not being held).
+
 ## Arena
+
+Provides Arena-specific game information.
+
+`arena.round(): integer`
+
+Gets the current round number.
+
+`arena.roundScore(teamNum: Team): integer`
+
+Gets the number of lives the given team has left for this round.
+
+`arena.playerStatus(teamNum: Team, playerNum: integer): integer`
+
+Gets a bitmask indicating status of the given player index on the given team.
+
+##### Bit mask specification
+
+| Bit Position | Binary mask (least significant bits) | Description                      |
+|--------------|--------------------------------------|----------------------------------|
+| `1`s place   | `0001`                               | Bit on if player exists          |
+| `2`s place   | `0010`                               | Bit on if player is alive        |
+| `4`s place   | `0100`                               | Bit on if player has spawns left |
+
+##### Possible values
+
+| Value        | Description                                |
+|--------------|--------------------------------------------|
+| `0 = 0b0000` | Player does not exist                      |
+| `1 = 0b0001` | Player exists, is not alive, has no spawns |
+| `3 = 0b0011` | Player exists, is alive, has no spawns     |
+| `5 = 0b0101` | Player exists, is not alive, has spawns    |
+| `7 = 0b0111` | Player exists, is alive, has spawns        |
 
 ## Rabbit
 
+Provides Rabbit-specific game information.
+
+`rabbit.rabbitName(): string`
+
+Gets the name of the current rabbit.
+
+`rabbit.leaderBoardScore(position: integer): integer`
+
+Gets the score of one of the players on the rabbit scoreboard. `position` must be `0` (first place), `1` (second place), or `2` (the player, or third place if the player is currently first/second).
+
+`rabbit.leaderBoardName(position: integer): string`
+
+Gets the name of the player at `position` on the rabbit scoreboard.
+
 ## CaH
+
+Provides Capture and Hold-specific game information.
+
+`cah.pointsNum(): integer`
+
+Gets the number of control points on the current map.
+
+`cah.pointsHeld(teamNum: Team): integer`
+
+Gets the number of control points held by the given team.
+
+`cah.pointHolder(pointIndex: integer): Team`
+
+Gets the team which holds the point with the given index.
+
+`cah.pointLabel(pointIndex: integer): character`
+
+Gets the single-character label (`'A'`, `'B'` etc.) for the point with the given index.

@@ -4,39 +4,6 @@ title: Data Types
 sidebar_label: Data Types
 ---
 
-## Enums
-
-The `enums` namespace contains constants and useful enumerations.
-
-### Teams enum
-
-Enumerates the possible values for a team number.
-
-- `enums.TEAM_BLOOD_EAGLE` = 0
-- `enums.TEAM_DIAMOND_SWORD` = 1
-- `enums.TEAM_SPECTATOR` = 255
-
-### Equip Points enum
-
-Enumerates the possible values for an equipment slot.
-
-- `enums.EQUIPMENT_NONE`= 0 - null/invalid equipment slot
-- `enums.EQUIPMENT_MELEE` = 1 - melee slot
-- `enums.EQUIPMENT_PRIMARY` = 2 - first weapon slot
-- `enums.EQUIPMENT_SECONDARY` = 3 - second weapon slot
-- `enums.EQUIPMENT_TERTIARY` = 4 - third weapon slot
-- `enums.EQUIPMENT_QUARTERNARY` = 5 - fourth weapon slot (no classes currently have a fourth weapon)
-- `enums.EQUIPMENT_PACK` = 6 - pack item slot
-- `enums.EQUIPMENT_BELT` = 7 - belt item slot
-- `enums.EQUIPMENT_DEPLOYABLE` = 8 - deployed deployable slot
-- `enums.EQUIPMENT_LASERTARGET` = 9 - laser targetter slot  
-
-### Reticule Type enum
-
-Enumerates the possible types of reticule / crosshair.
-
-- aaa
-
 ## Color
 
 The `Color` type has the following properties:
