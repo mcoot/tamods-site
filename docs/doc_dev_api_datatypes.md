@@ -48,7 +48,7 @@ v3 = addVector2s(v1, v2)
 
 ## DamageNumber Class
 
-`DamageNumber` represents a damage number. Has the constructor function `DamageNumber(number: integer, persistTime: float, location: FVector4, isShield: boolean)`
+`DamageNumber` represents a damage number. Has the constructor function `DamageNumber(number: integer, persistTime: float, location: Vector4, isShield: boolean)`
 
 #### Properties
 
@@ -56,7 +56,7 @@ v3 = addVector2s(v1, v2)
 |----------------|----------|----------------------------------------------------------|
 | `number`       | integer  | The number value of the damage                           |
 | `time`         | float    | The remaining time this damage number should persist for |
-| `location`     | FVector4 | The world-space location of the damage number            |
+| `location`     | Vector4 | The world-space location of the damage number            |
 | `color`        | Color    | The current colour of the damage number                  |
 | `scale`        | float    | The current scale of the damage number (1.0 = normal)    |
 | `shieldDamage` | boolean  | Whether the damage number represents shield damage       |

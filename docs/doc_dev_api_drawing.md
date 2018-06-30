@@ -10,19 +10,19 @@ The `HUD` datatype has a single property, `canvas`, which gives access to the HU
 
 #### Associated functions
 
-`project(hud: HUD, vector: FVector): FVector`
+`project(hud: HUD, vector: Vector): Vector`
 
-Projects a 3D vector onto the 2D canvas of the HUD. The resulting `FVector` is still a 3D vector type, but the `X` and `Y` components represent the 2D projected coordinates.
+Projects a 3D vector onto the 2D canvas of the HUD. The resulting `Vector` is still a 3D vector type, but the `X` and `Y` components represent the 2D projected coordinates.
 
-`drawDamageNumber(hud: HUD, num: string, color: Color, location: FVector, xScale: float, yScale: float)`
+`drawDamageNumber(hud: HUD, num: string, color: Color, location: Vector, xScale: float, yScale: float)`
 
-Draws a damage number with the value `num` (which can be any text). The `FVector`'s `X` and `Y` components determine the 2D positioning of the damage number on the HUD canvas, while the `Z` component determines its depth/draw order.
+Draws a damage number with the value `num` (which can be any text). The `Vector`'s `X` and `Y` components determine the 2D positioning of the damage number on the HUD canvas, while the `Z` component determines its depth/draw order.
 
-`isOnScreen(hud: HUD, position: FVector): boolean`
+`isOnScreen(hud: HUD, position: Vector): boolean`
 
 Returns true if the given world position is within the bounds of the HUD.
 
-`getPlayerPos(hud: HUD): FVector`
+`getPlayerPos(hud: HUD): Vector`
 
 Gets the world position of the player.
 

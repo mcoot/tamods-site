@@ -102,7 +102,7 @@ Event which fires when the player receives an accolade. The `legacy` parameter i
 
 ### onDamageNumberCreate
 
-`onDamageNumberCreate(existingDamageNumbers: DamageNumberArray, number: integer, location: FVector4, isShield: boolean)`
+`onDamageNumberCreate(existingDamageNumbers: DamageNumberArray, number: integer, location: Vector4, isShield: boolean)`
 
 Event called _instead_ of creating a damage number (i.e. handling this event replaces the native handler).
 
@@ -113,6 +113,8 @@ The `existingDamageNumbers` parameter is a [DamageNumberArray](doc_dev_api_datat
 `onDamageNumberUpdate(damageNumbers: DamageNumberArray, hud: HUD, deltaTime: float)`
 
 Event called once per frame _instead_ of the normal damage number update (i.e. replaces the native handler), to update and draw damage numbers. The `hud` parameter provides the handler with a reference to the player's [HUD](doc_dev_api_drawing.md#hud-data-type). `deltaTime` is the time in seconds since the last update.
+
+You will generally want to draw damage numbers in this function using the [`drawDamageNumber`](doc_dev_api_drawing.md#hud-data-type) function.
 
 ### onDrawHealthBar
 
