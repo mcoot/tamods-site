@@ -1,7 +1,7 @@
 ---
 id: doc_dev_api_drawing
-title: Hud Drawing
-sidebar_label: Hud Drawing
+title: Drawing
+sidebar_label: Drawing
 ---
 
 ## HUD Data Type
@@ -9,6 +9,10 @@ sidebar_label: Hud Drawing
 The `HUD` datatype has a single property, `canvas`, which gives access to the HUD's drawing canvas.
 
 #### Associated functions
+
+`getHUD(): HUD`
+
+Gets a reference to the player's HUD.
 
 `project(hud: HUD, vector: Vector): Vector`
 
@@ -42,7 +46,9 @@ The Ubermenu preset defines an abstracted way to draw Hud components, handling `
 
 <HUD MODULES>
 
-## Color Data Type
+## Data Types and Enums
+
+### Color Data Type
 
 The `Color` type has the following properties:
 
@@ -76,3 +82,81 @@ c3 = lerpColor(c1, c2, 0.5)
 console("Color c3 has values (r: " .. c3.r .. ", g:" .. c3.g .. ", b:" .. c3.b .. ", a:" .. c3.a .. ")")
 console("AND IT GIVES YOU NICE PURPLE TEXT", c3)
 ```
+
+### TextAlignment Enum
+
+Enumerates the possible text alignments.
+
+- `TEXT_ALIGN_LEFT` = 0 - Left-aligned
+- `TEXT_ALIGN_CENTER` = 0 - Center-aligned
+- `TEXT_ALIGN_RIGHT` = 0 - Right-aligned
+
+
+## Canvas Drawing
+
+The functions described below can be used in event handlers for a [drawing event](doc_dev_api_events.md#available-event-handlers), such as `onDrawCustomHud` or `onDrawHealthBar`.
+
+### Drawing Primitives
+
+`drawRect(x1: float, y1: float, x2: float, y2: float, color: Color)`
+
+Draw a filled rectangle with the given coordinates and colour.
+
+`drawBox(x1: float, y1: float, x2: float, y2: float, color: Color)`
+
+Draw an outline rectangle with the given coordinates and colour.
+
+`drawProgressBar(x1: float, y1: float, x2: float, y2: float, color: Color, direction: integer, proportion: float)`
+
+Draws a rectangle progress bar filled to the given proportion. The `direction` parameter can be one of:
+
+- `0` - up
+- `1` - right
+- `2` - down
+- `3` - left
+
+`draw2dLine(x1: float, y1: float, x2: float, y2: float, color: Color)`
+
+Draws a line between the two given points.
+
+### Drawing Text
+
+TAMods provides text drawing in three different font types: default (the damage number font), small (the console font) and the Unreal Tournament font set.
+
+#### Damage Number Font
+
+`drawText(text: string, color: Color, x: float, y: float, alignment: TextAlignment, scale: float)`
+
+Draw text in the damage number font. The `scale` parameter performs bitmap scaling on the text (so `scale` > 1 will produce blurriness).
+
+`getTextSize(text: string, scale: float): Vector2`
+
+Get the display size of the given text printed in damage number font, as a [2D vector](doc_dev_api_datatypes.md#vector2).
+
+#### Small Font
+
+`drawSmallText(text: string, color: Color, x: float, y: float, alignment: TextAlignment: shadowSize: integer, scale: float)`
+
+Draw text in the console font. The `shadowSize` value determines the distance of the drop shadow (`0` gives no shadow). The `scale` parameter performs bitmap scaling.
+
+`getSmallTextSize(text: string, scale: float): Vector2`
+
+Get the display size of the text in the console font.
+
+#### Unreal Tournament Fonts
+
+`drawUTText(text: string, color: Color, x: float, y: float, alignment: TextAlignment, shadowSize: integer, fontNum: integer)`
+
+Draw text in one of the Unreal Tournament fonts. `fontNum` is an integer in the range of `0` to `3`; roughly speaking the lower values correspond to smaller fonts.
+
+`drawUTTextScaled(text: string, color: Color, x: float, y: float, alignment: TextAlignment, shadowSize: integer, fontNum: integer, scale: float)`
+
+Draw text in one of the Unreal Tournament fonts, with bitmap scaling applied.
+
+`getUTTextSize(text: string, fontNum: integer): Vector2`
+
+Get the display size of the text in the given UT font.
+
+`getUTTextSizeScaled(text: string, fontNum: integer, scale: float): Vector2`
+
+Get the display size of the text in the given UT font, after bitmap scaling.

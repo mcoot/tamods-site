@@ -186,7 +186,7 @@ Gets the player's deaths.
 
 `player.score(): integer`
 
-Gets the player's current score (credits earned).
+Gets the player's current score (credits earned). In Rabbit this gives the Rabbit score.
 
 `player.arenaSpawnsLeft(): integer`
 
@@ -465,7 +465,7 @@ Gets a bitmask indicating status of the given player index on the given team.
 
 ## Rabbit
 
-Provides Rabbit-specific game information.
+Provides Rabbit-specific game information. Note that in the Rabbit game mode, `player.score()` will return the current player's Rabbit points.
 
 `rabbit.rabbitName(): string`
 
@@ -473,7 +473,7 @@ Gets the name of the current rabbit.
 
 `rabbit.leaderBoardScore(position: integer): integer`
 
-Gets the score of one of the players on the rabbit scoreboard. `position` must be `0` (first place), `1` (second place), or `2` (the player, or third place if the player is currently first/second).
+Gets the score of one of the players on the rabbit scoreboard. `position` must be `0` (first place), `1` (second place), or `2` (third place).
 
 `rabbit.leaderBoardName(position: integer): string`
 

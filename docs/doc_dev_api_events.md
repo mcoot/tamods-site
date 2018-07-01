@@ -4,13 +4,37 @@ title: Event Handling and I/O
 sidebar_label: Event Handling and I/O
 ---
 
-## Event Handling and Input/Output in TAMods
+## Console Input & Output
+
+TAMods allows you to output information via the console. It does not currently support direct console input, but you can open the console with a prompt which will execute Lua (via the `/lua` command).
+
+`console(message: string)`
+
+Prints the message to the console. Also aliased to `print(message: string)`
+
+`consoleRGB(message: string, color: Color)`
+
+Prints the message to the console in the given colour.
+
+`notify(title: string, message: string)`
+
+Displays a dropdown notification with the given title and message.
+
+`openConsole(prompt: string)`
+
+Opens the console, with the prompt pre-filled into the command text entry.
+
+This can be used to prompt users for input by pre-filling the `/lua` command. The example below would prompt the user to provide a value for `MyConfigVariable`.
+
+```lua
+openConsole("/lua MyConfigVariable = ")
+```
+
+## Event Handling in TAMods
 
 The code in your `config.lua`, `custom.lua` and any custom scripts is run when TAMods loads the config (on injection, and when the `/reloadconfig` command is used). Generally you will want your mod to be able to run code at other times during the game. To do this, you need to set up _event handlers_ which are triggered by certain events in the game.
 
 TAMods allows you to write handlers for a number of ingame events. You can also attach handlers to input from the player via keybinds (discussed below).
-
-You can output information back to the player in TAMods through the console, via [custom Hud drawing](doc_dev_api_drawing.md), or via manipulating configuration variables.
 
 ## Writing Event Handlers
 
@@ -114,6 +138,8 @@ The `existingDamageNumbers` parameter is a [DamageNumberArray](doc_dev_api_datat
 
 Event called once per frame _instead_ of the normal damage number update (i.e. replaces the native handler), to update and draw damage numbers. The `hud` parameter provides the handler with a reference to the player's [HUD](doc_dev_api_drawing.md#hud-data-type). `deltaTime` is the time in seconds since the last update.
 
+This event is a drawing event, so custom HUD drawing functions may be used.
+
 You will generally want to draw damage numbers in this function using the [`drawDamageNumber`](doc_dev_api_drawing.md#hud-data-type) function.
 
 ### onDrawHealthBar
@@ -122,11 +148,15 @@ You will generally want to draw damage numbers in this function using the [`draw
 
 Event called to draw  IFF indicator health bars _instead_ of the normal function (i.e. replaces the native handler). The `x` and `y` parameters define the normal HUD position of the top-left of the healthbar. The `healthPct` parameter is the proportion of health the player having their health bar drawn has.
 
+This event is a drawing event, so custom HUD drawing functions may be used.
+
 ### onDrawCustomHud
 
 `onDrawCustomHud(xRes: int, yRes: int)`
 
 Event called once per frame to draw the custom HUD. The parameters give the resolution of the game view.
+
+This event is a drawing event, so custom HUD drawing functions may be used.
 
 Further information about custom HUD drawing is available on the [Drawing page](doc_dev_api_drawing.md).
 
