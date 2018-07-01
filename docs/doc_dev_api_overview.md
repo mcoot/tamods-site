@@ -1,7 +1,7 @@
 ---
 id: doc_dev_api_overview
-title: API Reference - Overview
-sidebar_label: API Reference - Overview
+title: Overview
+sidebar_label: Overview
 ---
 
 ## Lua API Reference
@@ -10,3 +10,4 @@ sidebar_label: API Reference - Overview
 - used `list<T>` to refer to a Lua table containing sequential elements
 
 - STOPWATCH VARS
+- ROUTERECORDING VARS
