@@ -68,11 +68,11 @@ Save the current player position into the given slot (`1 <= slot <= 9`).
 
 `state.tp()`
 
-Teleport to the default (first) saved state, restoring position only.
+Teleport to the default (first) saved state, restoring position only, and refilling health and ammo.
 
 `state.tpTo(slot: integer)`
 
-Teleport to the given saved state, restoring position only.
+Teleport to the given saved state, restoring position only, and refilling health and ammo.
 
 `state.recall()`
 

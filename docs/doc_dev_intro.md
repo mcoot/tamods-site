@@ -4,7 +4,7 @@ title: Introduction to Modding
 sidebar_label: Introduction to Modding
 ---
 
-## So You Want To Mod Tribes: Ascend
+## So you want to mod Tribes: Ascend
 
 This documentation is for developers, and those who want to understand how TAMods works. If you're an end user, you don't need to read this. ;)
 
@@ -14,11 +14,11 @@ Before you begin writing mods or trying out scripts, you should make sure you ha
 
 TAMods consists of two components: the TAMods _core_, and the user scripts.
 
-The TAMods core is the closed source code contained in `TAMods.dll`. The TAMods core can interface with Tribes: Ascend's internal code once injected into the process. It exposes an API for mod authors via the [Lua](https://www.lua.org/) scripting language.
+The TAMods core is the closed source code contained in `TAMods.dll`. The TAMods core can interface with Tribes: Ascend's internal code once injected into the running game process. It exposes an API for mod authors via the [Lua](https://www.lua.org/) scripting language.
 
 As soon as TAMods is injected, it will look for two files in your T:A configuration folder (normally located at `<Documents folder>/My Games/Tribes Ascend/TribesGame/config`): first, `config.lua`, and then (if it exists) `custom.lua`. It runs these lua scripts in the TAMods core to apply user configuration and mods.
 
-## Where to write scripts
+## How to write scripts
 
 The `config.lua` file is modified by the TAMods configuration tool and should generally not be manually modified.
 
