@@ -91,6 +91,21 @@ Enumerates the possible text alignments.
 - `TEXT_ALIGN_CENTER` = 0 - Center-aligned
 - `TEXT_ALIGN_RIGHT` = 0 - Right-aligned
 
+### Viewport Information
+
+The `viewport` namespace gives information about the current HUD viewport (drawable area).
+
+`viewport.size(): Vector2`
+
+Gets the current size of the HUD viewport as a vector.
+
+`viewport.isMainMenuOpen(): boolean`
+
+Returns true if the player has the menu open.
+
+`viewport.isScoreboardOpen(): boolean`
+
+Returns true if the player currently has the scoreboard open.
 
 ## Canvas Drawing
 

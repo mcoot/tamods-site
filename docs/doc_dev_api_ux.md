@@ -28,7 +28,7 @@ The variables below provide simple damage number customisation; more complex mod
 | `damageNumbersColorMin`                | Color   | `rgb(255, 255, 255)` | The initial colour of the damage number                                         |
 | `damageNumbersColorMax`                | Color   | `rgb(248, 83, 83)`   | The final colour of the damage number                                           |
 
-### Gameplay
+### Gameplay and Graphics
 
 | Variable             | Type    | Default             | Description                                                                                          |
 |----------------------|---------|---------------------|------------------------------------------------------------------------------------------------------|
@@ -40,6 +40,14 @@ The variables below provide simple damage number customisation; more complex mod
 | `sensZoooom`         | float   | 2.0                 | Second zoom level sensitivity for when FOV scaling is disabled                                       |
 | `customWeaponOffset` | boolean | false               | Whether to offset the position of the weapon model                                                   |
 | `weaponOffset`       | Vector  | Vector(0.0,0.0,0.0) | The weapon model offset to use                                                                       |
+
+`sensitivity(sens: float)`
+
+Modify in-game sensitivity (either FOV-scaled or not) to the given value.
+
+`gamma(gamma: float)`
+
+Set the in-game graphics gamma to the given value.
 
 ### Hud Colours
 
@@ -93,7 +101,6 @@ The variables below provide simple damage number customisation; more complex mod
 | `showFirstPersonAmmo` | boolean | false   | Whether to always show the floating ammo counter even when disabled in-game |
 | `consoleSize`         | float   | 0.75    | The proportion of the screen the full console covers                        |
 | `consoleTransparency` | float   | 0.8     | The background transparency of the console                                  |
-| `recordStats`         | boolean | false   | Whether to record player statistics and display them at the end of a match  |
 
 ### MagicChain
 
@@ -115,9 +122,47 @@ The MagicChain feature allows for user-adjustable latency compensation for autom
 |----------------------------|---------|---------|------------------------------------------------------------------|
 | `disableBaseTurrets`       | boolean | false   | Whether to turn off base turrets in roam map                     |
 | `disablePower`             | boolean | false   | Whether to disable gen power in roam map                         |
-| `showSavedLocations`       | boolean | true    | Whether to display markers for saved state locations in roam map |
 | `maxSpeedWithFlag`         | integer | 0       | The flag drag speed cap in roam map (0 = no flag drag)           |
 | `decelerationRateWithFlag` | integer | 10      | The deceleration to use with flag drag in roam map               |
+
+In addition, the following functions correspond to console commands, and are available via the API to allow for keybinds.
+
+`toggleTurrets()`
+
+Toggles roam map base turrets on / off.
+
+`togglePower()`
+
+Toggles roam map base power on / off.
+
+`returnFlags()`
+
+Returns both flags in roam map.
+
+## Statistics
+
+TAMods can display and save player and team statistics at the end of a match.
+
+The team statistics in particular are useful for recording game results (this feature has been used to log results of Australian pickup games for analysis).
+
+| Variable          | Type    | Default | Description                                       |
+|-------------------|---------|---------|---------------------------------------------------|
+| `recordStats`     | boolean | false   | Whether to enable individual statistics           |
+| `recordTeamStats` | boolean | false   | If `recordStats` is enabled, also save team stats |
+| `saveStats`       | boolean | false   | Whether to save individual statistics to file     |
+| `saveTeamStats`   | boolean | false   | Whether to save team statistics to file           |
+
+Statistics files are saved in comma-separated value (CSV) format to the configuration directory; stats for multiple matches will be appended to the same file.
+
+## Chat
+
+`say(message: string)`
+
+Say the given message in global game chat.
+
+`teamsay(message: string)`
+
+Say the message in team chat.
 
 ## Global Player Mute
 
@@ -160,11 +205,27 @@ Mute a player with the settings defined by the given `MutedPlayer`.
 
 ### Sound Replacement and Volume Adjustment
 
-In-game sounds can be replaced with custom ones.
+#### Adjusting Default Sounds
 
-Sounds can be replaced by setting the variable with the form `sound<SoundName>` (e.g. `soundBluePlate`) to be the file path to the desired sound. _File paths should be relative to the config directory_.
+You can adjust the volume and pitch of any sound in the game by searching their names.
 
-Sounds can be volume-adjusted by setting the variable with the form `volume<SoundName>` (e.g. `volumeBluePlate`) to be the desired `float` volume level
+`modifySound(name: string, pitch: float, volume: float)`
+
+Modify the sound with the exact given name, adjusting its pitch and volume by the multiplicative factors given.
+
+`modifySoundRe(regex: string, pitch: float, volume: float)`
+
+Modify sounds matching the given regex pattern, adjusting pitch and volume.
+
+`searchSoundRe(regex: string)`
+
+Search for sounds matching the regex, printing results to the console.
+
+#### Replacing In-Game Sounds
+
+Certain in-game sounds can be replaced with a custom sound by setting the variable with the form `sound<SoundName>` (e.g. `soundBluePlate`) to be the file path to the desired sound. _File paths should be relative to the config directory_.
+
+Custom sounds can be volume-adjusted by setting the variable with the form `volume<SoundName>` (e.g. `volumeBluePlate`) to be the desired `float` volume level
 
 The following sounds are available for modification:
 

@@ -1,6 +1,6 @@
 {
   "developer": {
     "Introduction": ["doc_dev_intro", "doc_dev_tute_script", "doc_dev_tute_hudmodule"],
-    "API Reference": ["doc_dev_api_overview", "doc_dev_api_consolecommands", "doc_dev_api_events", "doc_dev_api_gameinfo", "doc_dev_api_ux", "doc_dev_api_model_proj", "doc_dev_api_drawing", "doc_dev_api_datatypes", "doc_dev_api_particlesystems"]
+    "API Reference": ["doc_dev_api_overview", "doc_dev_api_consolecommands", "doc_dev_api_events", "doc_dev_api_gameinfo", "doc_dev_api_ux", "doc_dev_api_model_proj", "doc_dev_api_routes", "doc_dev_api_drawing", "doc_dev_api_datatypes", "doc_dev_api_particlesystems"]
   }
 }
