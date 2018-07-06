@@ -170,9 +170,11 @@ It is highly recommended that you **do not** handle this event directly; instead
 
 ## Key Binding
 
+The key names used for keybinding are as per the [Unreal Engine documentation](https://wiki.unrealengine.com/List_of_Key/Gamepad_Input_Names).
+
 ### InputEventType enum
 
-This enum under the `enums` namespace enumerates the possibl types of input event.
+This enum under the `enums` namespace enumerates the possible types of input event.
 
 - `enums.INPUT_EVENT_TYPE_PRESSED` - event occurs when the key is pressed down
 - `enums.INPUT_EVENT_TYPE_RELEASED` - event occurs when the key is released

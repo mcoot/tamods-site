@@ -6,7 +6,7 @@ sidebar_label: Introduction to Modding
 
 ## So you want to mod Tribes: Ascend
 
-This documentation is for developers, and those who want to understand how TAMods works. If you're an end user, you don't need to read this. ;)
+This documentation is for developers, and those who want to understand how TAMods works. If you're an end user, you don't need to read this.
 
 Before you begin writing mods or trying out scripts, you should make sure you have TAMods installed and working. It's also highly recommended that you keep backups of your T:A config folder if you plan to write or modify TAMods scripts.
 
