@@ -35,53 +35,40 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
-              Getting Started (or other categories)
+            
+            <a href="https://github.com/mcoot/TribesLauncher/releases">
+              Download TribesLauncher
             </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
-              Guides (or other categories)
+            <a href={this.pageUrl('help.html', this.props.language)}>
+              User Help
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              API Reference (or other categories)
+            <a href={this.docUrl('doc_dev_intro.html', this.props.language)}>
+              Developer Documentation
             </a>
           </div>
           <div>
             <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
             <a
-              href="http://stackoverflow.com/questions/tagged/"
+              href="http://www.reddit.com/r/tribes"
               target="_blank"
               rel="noreferrer noopener">
-              Stack Overflow
+              Tribes Subreddit
             </a>
-            <a href="https://discordapp.com/">Project Chat</a>
             <a
-              href="https://twitter.com/"
+              href="https://discord.gg/ySkx6Cg"
               target="_blank"
               rel="noreferrer noopener">
-              Twitter
+              Australian Tribes Discord
             </a>
           </div>
           <div>
             <h5>More</h5>
             <a href={this.props.config.baseUrl + 'blog'}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
-            <a
-              className="github-button"
-              href={this.props.config.repoUrl}
-              data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
-              data-show-count={true}
-              data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub">
-              Star
-            </a>
+            <a href={this.props.config.repoUrl}>Site GitHub</a>
           </div>
         </section>
 
-        <a
+        {/* <a
           href="https://code.facebook.com/projects/"
           target="_blank"
           rel="noreferrer noopener"
@@ -92,7 +79,7 @@ class Footer extends React.Component {
             width="170"
             height="45"
           />
-        </a>
+        </a> */}
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
     );
