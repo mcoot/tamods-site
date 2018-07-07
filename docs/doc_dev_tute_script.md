@@ -8,7 +8,7 @@ This tutorial will cover writing your first TAMods script, to add useful keybind
 
 It is assumed that you already have TAMods installed and have the Ubermenu preset working.
 
-## Part 1: Setting Up Your Script
+## Part 1: Setting up your script
 
 To get started, navigate to your config directory - `<Documents>\My Games\Tribes Ascend\TribesGame\config`. It should contain your Tribes config files, as well as TAMods' configuration files. Create two new files in the config directory: `custom.lua` and `route_binds.lua`, and open both in your favourite text editor.
 
@@ -40,7 +40,7 @@ If you see errors in your console, or the `Hello World` text was not printed, ma
 
 Once you see this message, you've successfully loaded a custom script into TAMods! Now we can write a script to actually do something useful. Note that you don't have to restart the game when you edit your script: you can leave the game running in the background, and use the `/reloadconfig` command to load the new version of your script after you edit it.
 
-## Part 2: Route Recordings Bindings
+## Part 2: Route recordings bindings
 
 We have a custom TAMods script being loaded into the game, but at present all it does is print `Hello World`. Instead, we're going to use this script to add keybinds to help with accessing TAMods route recordings. Specifically, we're going to have binds to cycle through the routes available to us, and to save and teleport back to positions in Roam Map mode.
 

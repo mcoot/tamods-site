@@ -164,6 +164,10 @@ Gets the player's ping.
 
 Returns true if the player is currently viewing in first person.
 
+`player.isSkiing(): boolean`
+
+Returns true if the player is currently skiing.
+
 `player.isVehicle(): boolean`
 
 Returns true if the player is currently in a vehicle.
