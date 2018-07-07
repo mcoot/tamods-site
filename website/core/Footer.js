@@ -36,12 +36,12 @@ class Footer extends React.Component {
           <div>
             <h5>Docs</h5>
             
-            <a href="https://github.com/mcoot/TribesLauncher/releases">
+            <a href={this.docUrl('doc_user_tutorial.html', this.props.language)}>
+              Get TAMods
+            </a>
+            {/* <a href="https://github.com/mcoot/TribesLauncher/releases">
               Download TribesLauncher
-            </a>
-            <a href={this.pageUrl('help.html', this.props.language)}>
-              User Help
-            </a>
+            </a> */}
             <a href={this.docUrl('doc_dev_intro.html', this.props.language)}>
               Developer Documentation
             </a>

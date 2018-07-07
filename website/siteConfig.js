@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: 'TAMods' /* title for your website */,
-  tagline: 'TAMods Information & Developer Reference',
+  tagline: 'Unofficial modding support for Tribes: Ascend',
   url: 'https://your-docusaurus-test-site.com' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -38,17 +38,18 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {blog: true, label: 'Blog'},
+    {blog: true, label: 'News'},
+    {doc: 'doc_user_tutorial', label: 'Get TAMods'},
     {doc: 'doc_dev_intro', label: 'Developer Docs'},
-    {page: 'help', label: 'Help'}
+    // {page: 'help', label: 'Help'}
   ],
 
   // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
+  headerIcon: 'img/img-blank.png',
+  footerIcon: 'img/img-blank.png',
   favicon: 'img/favicon.png',
 
   /* colors for website */
