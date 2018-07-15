@@ -82,8 +82,8 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href={docUrl('doc_user_tutorial.html', language)}>Get TAMods</Button>
-            <Button href={docUrl('doc_user_tutorial.html', language)}>Learn About The Features</Button>
+            <Button href={docUrl('doc_user_install.html', language)}>Get TAMods</Button>
+            {/* <Button href={docUrl('doc_user_tutorial.html', language)}>Learn About The Features</Button> */}
             <Button href={docUrl('doc_dev_intro.html', language)}>Read Developer Docs</Button>
           </PromoSection>
         </div>
@@ -106,19 +106,19 @@ const Features = props => (
     {[
       {
         content: 'Create fully modular custom HUDs with TAMods',
-        image: imgUrl('docusaurus.svg'),
+        // image: imgUrl('docusaurus.svg'),
         imageAlign: 'top',
         title: 'Custom HUDs',
       },
       {
         content: 'Display, replay and record capping routes in-game',
-        image: imgUrl('docusaurus.svg'),
+        // image: imgUrl('docusaurus.svg'),
         imageAlign: 'top',
         title: 'Route Recording',
       },
       {
-        content: 'Want the SAP20 back? Or your Spinfusor to fire purple discs?',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Want the SAP20 back? A spinfusor that fires purple discs?',
+        // image: imgUrl('docusaurus.svg'),
         imageAlign: 'top',
         title: 'Weapon Visuals Modification',
       },
@@ -130,19 +130,21 @@ const FeatureCallout = props => (
   <div
     className="productShowcaseSection paddingBottom"
     style={{textAlign: 'center'}}>
-    <h2>Fully Scriptable in Lua</h2>
-    <MarkdownBlock>Customise all these features (and many more) with a comprehensive Lua API.</MarkdownBlock>
+    <h2>Customisation with a comprehensive Lua API</h2>
+    <MarkdownBlock>
+      Build custom HUDs, record and replay routes, customise weapon models, import custom hitsounds, record game stats and much more...
+    </MarkdownBlock>
   </div>
 );
 
 const LearnHow = props => (
-  <Block background="light">
+  <Block layout="twoColumn" background="light">
     {[
       {
-        content: 'TAMods provides robust features for creating completely customisable in-game HUDs. With the Ubermenu preset, you can combine provided HUD elements together, along with your own, to appear exactly as you want.',
-        image: imgUrl('docusaurus.svg'),
+        content: '',
+        image: imgUrl('screen_hud.jpg'),
         imageAlign: 'right',
-        title: 'Custom HUDs',
+        title: 'Feature Demonstration',
       },
     ]}
   </Block>
@@ -153,7 +155,7 @@ const TryOut = props => (
     {[
       {
         content: 'Talk about trying this out',
-        image: imgUrl('docusaurus.svg'),
+        image: imgUrl('screen_route.jpg'),
         imageAlign: 'left',
         title: 'Route Recording',
       },
@@ -166,7 +168,7 @@ const Description = props => (
     {[
       {
         content: 'This is another description of how this project is useful',
-        image: imgUrl('docusaurus.svg'),
+        image: imgUrl('screen_sap.jpg'),
         imageAlign: 'right',
         title: 'Weapon Visuals Modification',
       },
@@ -212,11 +214,11 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer">
-          <Features />
+          {/* <Features /> */}
           <FeatureCallout />
-          {/* <LearnHow />
-          <TryOut />
-          <Description /> */}
+          {/* <LearnHow /> */}
+          {/* <TryOut /> */}
+          {/* <Description /> */}
           {/* <Showcase language={language} /> */}
         </div>
       </div>

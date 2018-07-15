@@ -1,7 +1,9 @@
 ---
 id: doc_user_tutorial
-title: Getting Started with TAMods
-sidebar_label: Getting Started with TAMods
+title: Using TAMods
+sidebar_label: Using TAMods
 ---
 
-TAMods install...
+At this point you should have TAMods and the Ubermenu installed and working, as per the [Installing TAMods](doc_user_install.md) page.
+
+This page will walk through setting up some common TAMods features via the Ubermenu.

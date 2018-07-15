@@ -14,17 +14,21 @@ It is not recommended to do scripted / dynamic swapping of weapon models - the n
 
 #### Functions
 
-`setWeaponModel(sourceClass: string, sourceWeapon: string, replacementClass: string, replacementWeapon: string)`
+`setWeaponModel(sourceClass: string, sourceWeapon: string, replacementClass: string, replacementWeapon: string, swapAnims: boolean, leavePositioning: boolean)`
 
 The `Class` parameters should be one of `Light`, `Medium` or `Heavy`, and the `Weapon` parameters should be weapon names.
 
 This function will swap the source weapon's first person model with that of the replacement weapon.
 
+The `swapAnims` parameter determines whether to also swap weapon animations. Generally you will want this set to `true`.
+
+The `leavePositioning` parameter determines whether the weapon positioning should be adjusted. Generally you will want this set to `false`.
+
 #### Example
 
 ```lua
 -- Get the SAP20 back :D
-setWeaponModel("Light", "Phase Rifle", "Light", "SAP20")
+setWeaponModel("Light", "Phase Rifle", "Light", "SAP20", true, false)
 ```
 
 ## Projectiles
