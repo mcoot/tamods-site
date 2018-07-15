@@ -24,7 +24,7 @@ const siteConfig = {
   title: 'TAMods' /* title for your website */,
   tagline: 'Unofficial modding support for Tribes: Ascend',
   url: 'https://your-docusaurus-test-site.com' /* your website url */,
-  baseUrl: '/' /* base url for your project */,
+  baseUrl: 'https://mcoot.github.io/tamods-site/' /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
