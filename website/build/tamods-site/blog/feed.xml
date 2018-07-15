@@ -2,21 +2,21 @@
 <rss version="2.0">
     <channel>
         <title>TAMods Blog</title>
-        <link>http://www.tamods.orghttp://www.tamods.org/blog</link>
+        <link>http://www.tamods.org/blog</link>
         <description>The best place to stay up-to-date with the latest TAMods news and events.</description>
         <lastBuildDate>Sun, 15 Jul 2018 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>TAMods Blog</title>
-            <url>http://www.tamods.orghttp://www.tamods.org/img/img-blank.png</url>
-            <link>http://www.tamods.orghttp://www.tamods.org/blog</link>
+            <url>http://www.tamods.org/img/img-blank.png</url>
+            <link>http://www.tamods.org/blog</link>
         </image>
         <copyright>Copyright © 2018 TAMods Team</copyright>
         <item>
             <title><![CDATA[TAMods v0.7 Available Now]]></title>
-            <link>http://www.tamods.orghttp://www.tamods.org/blog/2018/07/15/tamods-0.7.html</link>
-            <guid>http://www.tamods.orghttp://www.tamods.org/blog/2018/07/15/tamods-0.7.html</guid>
+            <link>http://www.tamods.org/blog/2018/07/15/tamods-0.7.html</link>
+            <guid>http://www.tamods.org/blog/2018/07/15/tamods-0.7.html</guid>
             <pubDate>Sun, 15 Jul 2018 06:00:00 GMT</pubDate>
             <description><![CDATA[<p>A new major version of TAMods, version 0.7, has now been released and is available via <a href="https://github.com/mcoot/TribesLauncher/releases">the TribesLauncher application</a>.</p>
 <p>Read on for a list of major changes, read on!</p>
