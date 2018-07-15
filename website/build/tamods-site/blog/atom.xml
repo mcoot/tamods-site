@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://your-docusaurus-test-site.com/blog</id>
+    <title>TAMods Blog</title>
+    <updated>2018-07-15T06:00:00Z</updated>
+    <generator>Feed for Node.js</generator>
+    <link rel="alternate" href="https://your-docusaurus-test-site.com/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest TAMods news and events.</subtitle>
+    <logo>https://your-docusaurus-test-site.com/img/img-blank.png</logo>
+    <rights>Copyright © 2018 TAMods Team</rights>
+    <entry>
+        <title type="html"><![CDATA[TAMods v0.7 Available Now]]></title>
+        <id>https://your-docusaurus-test-site.com/blog/2018/07/15/tamods-0.7.html</id>
+        <link href="https://your-docusaurus-test-site.com/blog/2018/07/15/tamods-0.7.html">
+        </link>
+        <updated>2018-07-15T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>A new major version of TAMods, version 0.7, has now been released and is available via <a href="https://github.com/mcoot/TribesLauncher/releases">the TribesLauncher application</a>.</p>
+<p>Read on for a list of major changes, read on!</p>
+]]></summary>
+        <author>
+            <name>mcoot</name>
+            <uri>http://twitter.com/</uri>
+        </author>
+    </entry>
+</feed>
