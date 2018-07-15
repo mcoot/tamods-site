@@ -50,7 +50,7 @@ This draw command will draw the text `Hello World` in white in the console font,
 
 To test this out, open the game, enter Roam Map, and open up the Ubermenu. Under `HUD Maker > Add Module`, you should now see an entry labelled `Tutorial Speedbar`. Adding this module should cause "Hello World" to appear in the top left of the screen, as in the following:
 
-![Hello world displayed on the screen](assets/doc_dev_tute_hudmodule-1.png)
+![Hello world displayed on the screen](/docs/assets/doc_dev_tute_hudmodule-1.png)
 
 If adding your module caused Lua errors to display in the console, then your script is incorrect. You will have to fix your script and use `/reloadconfig` to reload it before you can try adding it again.
 
@@ -158,7 +158,7 @@ Here we are drawing the speed using an Unreal Tournament font; we've gotten the 
 
 The script is now complete. Try it out in the game and fix any errors (you can see the full, correct script [below](#the-final-script)). It should look something like the following screenshots:
 
-![Custom speedbar displayed on the screen](assets/doc_dev_tute_hudmodule-2.png)
+![Custom speedbar displayed on the screen](/docs/assets/doc_dev_tute_hudmodule-2.png)
 
 You've now written your first HUDModule! All HUDModules should use the same skeleton as this one; you can vary the options you present and the code in the `module.draw` function to display other things, and combine them with other TAMods features to build more complex custom HUDs.
 

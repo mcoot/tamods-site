@@ -34,7 +34,7 @@ require("route_binds")
 
 The script we have should print `Hello World` into the console when TAMods loads its configuration. To test this, run the game and ensure TAMods is injected; then, enter Roam Map (any map). Since you were not in a game when you first injected TAMods, you'll have to reload your config by entering the `/reloadconfig` command in the console. Once you do so, you should see text which looks similar to the following in your console:
 
-![Hello world printed in the console](assets/doc_dev_tute_script-1.png)
+![Hello world printed in the console](/docs/assets/doc_dev_tute_script-1.png)
 
 If you see errors in your console, or the `Hello World` text was not printed, make sure your `route_binds.lua` and `custom.lua` are exactly as in the above section, and that TAMods is properly injected.
 
