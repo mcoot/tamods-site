@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Capping and Route Recording · TAMods</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Stopwatch"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Capping and Route Recording · TAMods"/><meta property="og:type" content="website"/><meta property="og:url" content="https://your-docusaurus-test-site.com/index.html"/><meta property="og:description" content="## Stopwatch"/><meta property="og:image" content="https://your-docusaurus-test-site.com/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://your-docusaurus-test-site.com/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://your-docusaurus-test-site.com/blog/atom.xml" title="TAMods Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://your-docusaurus-test-site.com/blog/feed.xml" title="TAMods Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/img-blank.png" alt="TAMods"/><h2 class="headerTitleWithLogo">TAMods</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/blog" target="_self">News</a></li><li class=""><a href="/docs/doc_user_install.html" target="_self">Get TAMods</a></li><li class="siteNavGroupActive"><a href="/docs/doc_dev_intro.html" target="_self">Developer Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>API Reference</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Introduction</h3><ul><li class="navListItem"><a class="navItem" href="/docs/doc_dev_intro.html">Introduction to Modding</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_tute_script.html">Tutorial - Writing a Script</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_tute_hudmodule.html">Tutorial - Writing a HUDModule</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API Reference</h3><ul><li class="navListItem"><a class="navItem" href="/docs/doc_dev_api_overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_api_consolecommands.html">Console Commands</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_api_events.html">Event Handling and I/O</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_api_gameinfo.html">Game Information</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_api_ux.html">User Experience Features</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_api_model_proj.html">Model and Projectile Modification</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/doc_dev_api_routes.html">Capping and Route Recording</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_api_drawing.html">Drawing</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_api_datatypes.html">Miscellaneous Data Types</a></li><li class="navListItem"><a class="navItem" href="/docs/doc_dev_api_particlesystems.html">Particle Systems</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Capping and Route Recording</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="stopwatch"></a><a href="#stopwatch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stopwatch</h2>
+<p>TAMods offers a built-in stopwatch feature, useful for timing capping routes.</p>
+<h4><a class="anchor" aria-hidden="true" id="configuration-variables"></a><a href="#configuration-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration Variables</h4>
+<table>
+<thead>
+<tr><th>Variable</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>stopwatchStopOnCap</code></td><td>boolean</td><td>false</td><td>Whether the stopwatch should stop when the flag is capped</td></tr>
+<tr><td><code>stopwatchStopOnDeath</code></td><td>boolean</td><td>true</td><td>Whether the stopwatch should stop when the player dies</td></tr>
+<tr><td><code>stopwatchNotifications</code></td><td>boolean</td><td>true</td><td>Whether to show dropdown notifications for the stopwatch on flag pickup etc.</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="functions"></a><a href="#functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Functions</h4>
+<p>These functions in the <code>stopwatch</code> namespace correspond to console commands, accessible via the Lua API to allow for keybinding.</p>
+<p><code>stopwatch.start()</code></p>
+<p>Start (and reset) the stopwatch.</p>
+<p><code>stopwatch.stop()</code></p>
+<p>End the stopwatch.</p>
+<p><code>stopwatch.toggle()</code></p>
+<p>Start the stopwatch if it is stopped; stop it otherwise.</p>
+<p><code>stopwatch.isRunning(): boolean</code></p>
+<p>Returns true if the stopwatch is running.</p>
+<p><code>stopwatch.time(): float</code></p>
+<p>Get the time on the stopwatch in seconds.</p>
+<p><code>stopwatch.timeStr(): string</code></p>
+<p>Get the time on the stopwatch as a formatted string.</p>
+<h2><a class="anchor" aria-hidden="true" id="state-saving"></a><a href="#state-saving" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>State Saving</h2>
+<p>The state functions allow for the saving of specific locations on the map, and recalling / teleporting to them (in roam map only).</p>
+<h4><a class="anchor" aria-hidden="true" id="configuration-variables-1"></a><a href="#configuration-variables-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration Variables</h4>
+<table>
+<thead>
+<tr><th>Variable</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>showSavedLocations</code></td><td>boolean</td><td>true</td><td>Whether to display markers for saved state locations in roam map</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="functions-1"></a><a href="#functions-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Functions</h4>
+<p>These functions in the <code>state</code> namespace correspond to console commands, accessible via the Lua API to allow for keybinding.</p>
+<p><code>state.save()</code></p>
+<p>Save the current player position into the default (first) save slot.</p>
+<p><code>state.saveTo(slot: integer)</code></p>
+<p>Save the current player position into the given slot (<code>1 &lt;= slot &lt;= 9</code>).</p>
+<p><code>state.tp()</code></p>
+<p>Teleport to the default (first) saved state, restoring position only, and refilling health and ammo.</p>
+<p><code>state.tpTo(slot: integer)</code></p>
+<p>Teleport to the given saved state, restoring position only, and refilling health and ammo.</p>
+<p><code>state.recall()</code></p>
+<p>Recall to the default (first) saved state, restoring not just position but complete state at that time (e.g. health, energy, velocity, flag status).</p>
+<p><code>state.recallTo(slot: integer)</code></p>
+<p>Recall to the given saved state, restoring not just position but complete state at that time (e.g. health, energy, velocity, flag status).</p>
+<p><code>state.reset()</code></p>
+<p>Remove all saved states.</p>
+<p><code>state.setToSpawns()</code></p>
+<p>Set saved states to the team's spawn locations.</p>
+<h2><a class="anchor" aria-hidden="true" id="route-recording"></a><a href="#route-recording" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Route Recording</h2>
+<h4><a class="anchor" aria-hidden="true" id="configuration-variables-2"></a><a href="#configuration-variables-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration Variables</h4>
+<table>
+<thead>
+<tr><th>Variable</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>routeDrawInterval</code></td><td>integer</td><td>500</td><td>How frequently to draw markers on recorded routes, in milliseconds</td></tr>
+<tr><td><code>routeDrawETAInterval</code></td><td>integer</td><td>5</td><td>How frequently to draw route times, in seconds</td></tr>
+<tr><td><code>routeDrawTransparency</code></td><td>float</td><td>0.8</td><td>The transparency of route markers</td></tr>
+<tr><td><code>routeReplayRotation</code></td><td>boolean</td><td>true</td><td>Whether to rotation the player/bot view during route replay</td></tr>
+<tr><td><code>routeCinematicMode</code></td><td>boolean</td><td>false</td><td>Whether to adjust route replay to be smoother</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="functions-2"></a><a href="#functions-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Functions</h4>
+<p>These functions in the <code>route</code> namespace correspond to console commands, accessible via the Lua API to allow for keybinding.</p>
+<h5><a class="anchor" aria-hidden="true" id="recording"></a><a href="#recording" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recording</h5>
+<p><code>route.record()</code></p>
+<p>Toggle route recording (aliased to <code>route.rec()</code>).</p>
+<p><code>route.recStart()</code></p>
+<p>Start route recording.</p>
+<p><code>route.recStop()</code></p>
+<p>End route recording.</p>
+<p><code>route.reset()</code></p>
+<p>Reset the current route. Stops any on-going recording.</p>
+<h5><a class="anchor" aria-hidden="true" id="replay"></a><a href="#replay" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Replay</h5>
+<p>Route replay is only available in roam map.</p>
+<p><code>route.replay()</code></p>
+<p>Toggle in-game replay of the current route.</p>
+<p><code>route.replayStart(startTime: float)</code></p>
+<p>Start in-game replay of the current route at the given time in the route.</p>
+<p><code>route.replayStop()</code></p>
+<p>Stop replay of the current route.</p>
+<p><code>route.enableBot(on: boolean)</code></p>
+<p>Enable or disable bot replay. If bot replay is off, replaying a route will replay from the player's perspective.</p>
+<h5><a class="anchor" aria-hidden="true" id="loading-saving"></a><a href="#loading-saving" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Loading / Saving</h5>
+<p><code>route.getAll()</code></p>
+<p>Load all route files for the current map into the game.</p>
+<p><code>route.getTeam()</code></p>
+<p>Load only route files for the player's current team on the current map.</p>
+<p><code>route.getEnemy()</code></p>
+<p>Load only route file for the opposing team on the current map.</p>
+<p><code>route.getTable(): List&lt;string&gt;</code></p>
+<p>Get a Lua table containing all currently loaded route names (in the form of a 0-indexed list).</p>
+<p><code>route.save(description: string)</code></p>
+<p>Save the current route, with the given route name / description. Details about the map, team, player class, player name, route length etc. will be automatically saved.</p>
+<p><code>route.load(routeNumber: integer)</code></p>
+<p>Set the current route to the given numbered route in the listings for the current map.</p>
+<p><code>route.find(regex: string)</code></p>
+<p>Find loaded routes matching the given regex, and print them to the console. Aliased to <code>route.search(regex: string)</code>.</p>
+<p><code>route.list()</code></p>
+<p>List all loaded routes to the console.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/doc_dev_api_model_proj.html">← Model and Projectile Modification</a><a class="docs-next button" href="/docs/doc_dev_api_drawing.html">Drawing →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#stopwatch">Stopwatch</a></li><li><a href="#state-saving">State Saving</a></li><li><a href="#route-recording">Route Recording</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/img-blank.png" alt="TAMods" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc_user_install.html">Get TAMods</a><a href="/docs/en/doc_dev_intro.html">Developer Documentation</a></div><div><h5>Community</h5><a href="http://www.reddit.com/r/tribes" target="_blank" rel="noreferrer noopener">Tribes Subreddit</a><a href="https://discord.gg/ySkx6Cg" target="_blank" rel="noreferrer noopener">Australian Tribes Discord</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/mcoot/tamods-site">Site GitHub</a></div></section><section class="copyright">Copyright © 2018 TAMods Team</section></footer></div></body></html>
