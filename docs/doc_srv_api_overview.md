@@ -44,3 +44,36 @@ Core configuration and information about TAMods-Server.
 The `Core.ConnectToTAServer` option controls whether the integration with the TAServer custom login server system is enabled. This defaults to true, and it is recommended that this be left on unless you are trying to run the game server completely standalone. With this disabled, a number of features will not work (such as player-specifiable loadouts).
 
 The `Core.ConnectToClients` option is not yet functional (associated features are a work in progress), but this will be required for features like game balance modification to function. The `Core.AllowUnmoddedClients` option is also not yet functional, but this will allow the server host to require clients support the TAMods Client-Server protocol in order to join a game team. Blocking unmodded players may be useful since some balance features require a modified client.
+
+## Logging
+
+TAMods-Server can keep a logfile at `C:\Users\<Username>\TAMods-Server.log`; this can be useful for debugging issues with configuration.
+
+### Configuring the Logger
+
+By default, nothing will be logged; to enable logging you must set the log level using the following function:
+
+`Logger.setLevel(level: LogLevel)`
+
+The possible log levels, listed below, are ordered such that every level logs messages of that level and above - so e.g. the `Warn` level will cause messages at the Warn, Error and Fatal levels to be logged.
+
+- `Logger.Levels.None` - Log nothing
+- `Logger.Levels.Fatal` - Log only fatal errors
+- `Logger.Levels.Error` - Log any error-level message
+- `Logger.Levels.Warn` - Log warning messages in addition to errors
+- `Logger.Levels.Info` - Log informational messages in addition to warnings and errors
+- `Logger.Levels.Debug` - Log everything, including debugging messages (this will display internal TAMods-Server debugging messages)
+
+### Writing log messages
+
+Once the logger is configured, you can log from Lua with the following functions, to log messages at each level:
+
+`Logger.fatal(message: string)`
+
+`Logger.error(message: string)`
+
+`Logger.warn(message: string)`
+
+`Logger.info(message: string)`
+
+`Logger.debug(message: string)`
