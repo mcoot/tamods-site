@@ -40,7 +40,6 @@ Core configuration and information about TAMods-Server.
 | Core.ConnectToTAServer    | boolean | true              | Yes        | Whether to attempt connection to the TAServer launcher                                 |
 | Core.ConnectToClients     | boolean | true              | Yes        | Whether to attempt connection to modded clients via the TAMods protocol                |
 | Core.AllowUnmoddedClients | boolean | true              | Yes        | If `Core.ConnectToClients` is enabled, whether to allow players without TAMods to join |
-|                           |         |                   |            |                                                                                        |
 
 The `Core.ConnectToTAServer` option controls whether the integration with the TAServer custom login server system is enabled. This defaults to true, and it is recommended that this be left on unless you are trying to run the game server completely standalone. With this disabled, a number of features will not work (such as player-specifiable loadouts).
 

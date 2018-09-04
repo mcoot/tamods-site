@@ -43,7 +43,10 @@ class Footer extends React.Component {
               Download TribesLauncher
             </a> */}
             <a href={this.docUrl('doc_dev_intro.html', this.props.language)}>
-              Developer Documentation
+              TAMods Documentation
+            </a>
+            <a href={this.docUrl('doc_srv_api_overview.html', this.props.language)}>
+              TAMods-Server Documentation
             </a>
           </div>
           <div>

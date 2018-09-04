@@ -5,5 +5,8 @@
   },
   "user": {
     "Getting Started": ["doc_user_install"]
+  },
+  "server": {
+    "API Reference": ["doc_srv_api_overview", "doc_srv_api_serverconfig"]
   }
 }

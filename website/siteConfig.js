@@ -40,7 +40,8 @@ const siteConfig = {
   headerLinks: [
     {blog: true, label: 'News'},
     {doc: 'doc_user_install', label: 'Get TAMods'},
-    {doc: 'doc_dev_intro', label: 'Developer Docs'},
+    {doc: 'doc_dev_intro', label: 'TAMods Docs'},
+    {doc: 'doc_srv_api_overview', label: 'TAMods-Server Docs'},
     // {page: 'help', label: 'Help'}
   ],
 
