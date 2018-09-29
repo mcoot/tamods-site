@@ -43,7 +43,19 @@ Core configuration and information about TAMods-Server.
 
 The `Core.ConnectToTAServer` option controls whether the integration with the TAServer custom login server system is enabled. This defaults to true, and it is recommended that this be left on unless you are trying to run the game server completely standalone. With this disabled, a number of features will not work (such as player-specifiable loadouts).
 
-The `Core.ConnectToClients` option is not yet functional (associated features are a work in progress), but this will be required for features like game balance modification to function. The `Core.AllowUnmoddedClients` option is also not yet functional, but this will allow the server host to require clients support the TAMods Client-Server protocol in order to join a game team. Blocking unmodded players may be useful since some balance features require a modified client.
+The `Core.ConnectToClients` option determines whether the server will run a TAMods protocol control server that incoming game clients may connect to. This control server allows the server to communicate additional information to clients running clientside TAMods - in particular, game balance modding information.
+
+The `Core.AllowUnmoddedClients` option allows the server owner to block unmodded players from participating in the game, which may be desirable if you are modifying game balance (which requires the control connection). If this option is true, unmodded clients will still be able to enter the server, but will not be able to join the team. They may still spectate the game.
+
+## Game Balance Properties
+
+TAMods-Server gives you the ability not just to run custom servers and modify their settings, but also to modify the properties of objects within the game.
+
+Documentation on the specific modifications available can be found on the pages detailing how to modify [Items](doc_srv_api_properties_items.md), [Classes](doc_srv_api_properties_classes.md) and [Vehicles](doc_srv_api_properties_vehicles.md).
+
+Importantly, the mechanism for many of these modifications **relies on players using a compatible version of clientside TAMods**. If you set your server up with extensive game balance modification, a player joining your server without TAMods will likely have a bad experience, as their game client doesn't understand what's going on at all.
+
+While generally these effects on unmodded players will cause issues only for them, there are no hard guarantees that players will not be able to gain some small advantage by having unmodded clients. If you wish to prevent this, the `Core.AllowUnmoddedClients` flag can be used to prevent players without TAMods from joining teams in your server. They will still be able to spectate games, but cannot join either side.
 
 ## Logging
 
