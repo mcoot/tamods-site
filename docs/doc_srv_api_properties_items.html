@@ -23,7 +23,7 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Game Balance - Items</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
 <p>Item Property Modification can be used to modify the balance properties of equipment items, such as weapons, grenades, packs and deployables.</p>
-<p>All item modification functions and properties fall under the <code>Items</code> namespace. Pproperties fall under the <code>Items.Properties</code> namespace. So for instance, one could reference a property with <code>Items.Properties.ClipAmmo</code>.</p>
+<p>All item modification functions and properties fall under the <code>Items</code> namespace. Properties fall under the <code>Items.Properties</code> namespace. So for instance, one could reference a property with <code>Items.Properties.ClipAmmo</code>.</p>
 <p>When listing weapon types: the term <code>shot weapons</code> is used to refer to all weapons which act via shooting - i.e. all except grenades, mines and deployables.</p>
 <h3><a class="anchor" aria-hidden="true" id="setting-item-properties"></a><a href="#setting-item-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting Item Properties</h3>
 <p>Getter and Setter functions for property values are provided.</p>
@@ -100,8 +100,8 @@ Logger.info(<span class="hljs-string">"New AR clip size: "</span> .. Items.getPr
 <tr><th>Property</th><th>Type</th><th>Applicable Items</th><th>Value Restrictions</th><th>Units</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>ExplosiveRadius</td><td>float</td><td>Explosive weapons</td><td>&gt;= 0</td><td>Unreal Units</td><td>Size of the weapon's damaging explosion</td></tr>
-<tr><td>BulletDamageRange</td><td>float</td><td>Bullet Weapons</td><td>&gt;= 0</td><td>Unreal Units</td><td>Size of the damage range (<em>not</em> the total range of the weapon)</td></tr>
+<tr><td>ExplosiveRadius</td><td>float</td><td>Explosive weapons</td><td>&gt;= 0</td><td>UU</td><td>Size of the weapon's damaging explosion</td></tr>
+<tr><td>BulletDamageRange</td><td>float</td><td>Bullet Weapons</td><td>&gt;= 0</td><td>UU</td><td>Size of the damage range (<em>not</em> the total range of the weapon)</td></tr>
 <tr><td>MaxDamageRangeProportion</td><td>float</td><td>All weapons</td><td>0 &lt;= x &lt;= 1</td><td></td><td>Proportion of the damage range at which falloff starts</td></tr>
 <tr><td>MinDamageRangeProportion</td><td>float</td><td>All weapons</td><td>0 &lt;= x &lt;= 1</td><td></td><td>Proportion of the damage range at which falloff ends</td></tr>
 <tr><td>MinDamageProportion</td><td>float</td><td>All weapons</td><td>0 &lt;= x &lt;= 1</td><td></td><td>Proportion of the normal damage dealt at the MinDamageRangeProportion</td></tr>
@@ -170,7 +170,7 @@ Logger.info(<span class="hljs-string">"New AR clip size: "</span> .. Items.getPr
 <tr><th>Property</th><th>Type</th><th>Applicable Items</th><th>Value Restrictions</th><th>Units</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>MeleeDamageRadius</td><td>float</td><td>Melee</td><td>&gt;= 0</td><td>Unreal Units</td><td>Distance at which melee will hit</td></tr>
+<tr><td>MeleeDamageRadius</td><td>float</td><td>Melee</td><td>&gt;= 0</td><td>UU</td><td>Distance at which melee will hit</td></tr>
 <tr><td>MeleeConeAngle</td><td>float</td><td>Melee</td><td>0 &lt;= x &lt;= 360</td><td>Degrees</td><td>Angle of the cone for which melee will hit</td></tr>
 </tbody>
 </table>
