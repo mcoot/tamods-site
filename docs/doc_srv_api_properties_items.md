@@ -8,7 +8,7 @@ sidebar_label: Game Balance - Items
 
 Item Property Modification can be used to modify the balance properties of equipment items, such as weapons, grenades, packs and deployables.
 
-All item modification functions and properties fall under the `Items` namespace. Pproperties fall under the `Items.Properties` namespace. So for instance, one could reference a property with `Items.Properties.ClipAmmo`.
+All item modification functions and properties fall under the `Items` namespace. Properties fall under the `Items.Properties` namespace. So for instance, one could reference a property with `Items.Properties.ClipAmmo`.
 
 When listing weapon types: the term `shot weapons` is used to refer to all weapons which act via shooting - i.e. all except grenades, mines and deployables.
 
@@ -82,13 +82,13 @@ To give a sense of the reasonable scale for values: the Spinfusor gives `85000` 
 
 ### Falloff
 
-| Property                 | Type  | Applicable Items  | Value Restrictions | Units        | Description                                                           |
-| ------------------------ | ----- | ----------------- | ------------------ | ------------ | --------------------------------------------------------------------- |
-| ExplosiveRadius          | float | Explosive weapons | >= 0               | Unreal Units | Size of the weapon's damaging explosion                               |
-| BulletDamageRange        | float | Bullet Weapons    | >= 0               | Unreal Units | Size of the damage range (_not_ the total range of the weapon)        |
-| MaxDamageRangeProportion | float | All weapons       | 0 <= x <= 1        |              | Proportion of the damage range at which falloff starts                |
-| MinDamageRangeProportion | float | All weapons       | 0 <= x <= 1        |              | Proportion of the damage range at which falloff ends                  |
-| MinDamageProportion      | float | All weapons       | 0 <= x <= 1        |              | Proportion of the normal damage dealt at the MinDamageRangeProportion |
+| Property                 | Type  | Applicable Items  | Value Restrictions | Units | Description                                                           |
+| ------------------------ | ----- | ----------------- | ------------------ | ----- | --------------------------------------------------------------------- |
+| ExplosiveRadius          | float | Explosive weapons | >= 0               | UU    | Size of the weapon's damaging explosion                               |
+| BulletDamageRange        | float | Bullet Weapons    | >= 0               | UU    | Size of the damage range (_not_ the total range of the weapon)        |
+| MaxDamageRangeProportion | float | All weapons       | 0 <= x <= 1        |       | Proportion of the damage range at which falloff starts                |
+| MinDamageRangeProportion | float | All weapons       | 0 <= x <= 1        |       | Proportion of the damage range at which falloff ends                  |
+| MinDamageProportion      | float | All weapons       | 0 <= x <= 1        |       | Proportion of the normal damage dealt at the MinDamageRangeProportion |
 
 Weapon falloff is applied both to explosive and bullet weapons. For explosive weapons, falloff causes lower damage to targets further away from the explosion. For bullet weapons, falloff causes lower dmaage to targets further from the shooting player.
 
@@ -153,10 +153,10 @@ where `x` is the distance, `r` is the damage range, `m` is the minimum damage pr
 
 ## Melee
 
-| Property          | Type  | Applicable Items | Value Restrictions | Units        | Description                                |
-| ----------------- | ----- | ---------------- | ------------------ | ------------ | ------------------------------------------ |
-| MeleeDamageRadius | float | Melee            | >= 0               | Unreal Units | Distance at which melee will hit           |
-| MeleeConeAngle    | float | Melee            | 0 <= x <= 360      | Degrees      | Angle of the cone for which melee will hit |
+| Property          | Type  | Applicable Items | Value Restrictions | Units   | Description                                |
+| ----------------- | ----- | ---------------- | ------------------ | ------- | ------------------------------------------ |
+| MeleeDamageRadius | float | Melee            | >= 0               | UU      | Distance at which melee will hit           |
+| MeleeConeAngle    | float | Melee            | 0 <= x <= 360      | Degrees | Angle of the cone for which melee will hit |
 
 ## Accuracy
 
