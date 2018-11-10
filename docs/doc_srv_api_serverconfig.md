@@ -18,15 +18,17 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 
 ### Options
 
-#### Time Limits and Respawn Time
+#### Timing
 
 | Variable                          | Type | Default | Description                                                         |
-|-----------------------------------|------|---------|---------------------------------------------------------------------|
+| --------------------------------- | ---- | ------- | ------------------------------------------------------------------- |
 | ServerSettings.TimeLimit          | int  | 25      | Game time limit in minutes                                          |
 | ServerSettings.OvertimeLimit      | int  | 10      | Length of overtime in minutes                                       |
 | ServerSettings.WarmupTime         | int  | 20      | Length of warmup time in seconds                                    |
 | ServerSettings.RespawnTime        | int  | 5       | Respawn time in seconds                                             |
 | ServerSettings.SniperRespawnDelay | int  | 0       | Additional respawn time incurred when the player has a sniper rifle |
+| ServerSettings.AmmoPickupLifespan | int  | 15      | Time in seconds that ammo pickups dropped by dead players last      |
+| ServerSettings.CTFFlagTimeout     | int  | 40      | Time in seconds before a dropped flag will return to base           |
 
 #### Team Options
 
@@ -100,101 +102,6 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 | ServerSettings.FlagDragMedium       | int  | 0       | Speed at which flag-drag occurs for mediums |
 | ServerSettings.FlagDragHeavy        | int  | 0       | Speed at which flag-drag occurs for heavies |
 | ServerSettings.FlagDragDeceleration | int  | 0       | Deceleration rate for flag-drag             |
-
-## Loadouts
-
-### Equip Points
-
-Weapons and items must be equipped at 'item slots' or _equip points_; the Equip Points enum gives the possible slots at which an item may be equipped.
-
-The available equip points are listed below. Note that not all equip points are fully functional in the current version of the game (e.g. perks).
-
-- `Loadouts.EquipPoints.None` (Invalid equip point which will not apply a weapon)
-- `Loadouts.EquipPoints.Melee`
-- `Loadouts.EquipPoints.Primary`
-- `Loadouts.EquipPoints.Secondary`
-- `Loadouts.EquipPoints.Tertiary`
-- `Loadouts.EquipPoints.Quarternary`
-- `Loadouts.EquipPoints.Pack`
-- `Loadouts.EquipPoints.Belt`
-- `Loadouts.EquipPoints.Deployable`
-- `Loadouts.EquipPoints.LaserTarget`
-- `Loadouts.EquipPoints.Armor`
-- `Loadouts.EquipPoints.PerkA`
-- `Loadouts.EquipPoints.PerkB`
-- `Loadouts.EquipPoints.Skin`
-- `Loadouts.EquipPoints.Voice`
-
-### Hardcoded Loadouts
-
-The server admin can specify a set of hardcoded loadouts, which will be used as a fallback if the player's own selected loadouts cannot be retrieved - usually because the server is running standalone (not connected to a TAServer login server). Alternately these can be used to override a player's selected loadout with the `ServerSettings.ForceHardcodedLoadouts` option.
-
-Nine loadouts, numbered `0` to `8` (corresponding to Loadouts `A` through `I` in-game) can be set for each class, via the following class of functions:
-
-`Loadouts.Hardcoded.<ClassType>.set(loadoutNumber: integer, equipPoint: EquipPoint, itemName: string)`
-
-Getter functions are also provided:
-
-`Loadouts.Hardcoded.<ClassType>.get(loadoutNumber: integer, equipPoint: EquipPoint): string`
-
-The `<ClassType>` should be one of `Light`, `Medium` or `Heavy`, as in the following example:
-
-```lua
-Loadouts.Hardcoded.Light.set(0, Loadouts.EquipPoints.Primary, "Light Spinfusor")
-Loadouts.Hardcoded.Medium.set(3, Loadouts.EquipPoints.Belt, "EMP Grenades")
-Loadouts.Hardcoded.Heavy.set(8, Loadouts.EquipPoints.Pack, "Forcefield")
-```
-
-#### Forcing Hardcoded Loadouts
-
-Via the `ForceHardcodedLoadouts` server setting, it is possible to have server-side hardcoded loadouts take precedence over player-selected ones (rather than them being a fallback). This may be useful if you want to restrict players to _only_ using specific loadouts.
-
-| Variable                              | Type    | Default | Description                                                                                |
-|---------------------------------------|---------|---------|--------------------------------------------------------------------------------------------|
-| ServerSettings.ForceHardcodedLoadouts | boolean | false   | If true, game server hardcoded loadouts will take precedence over player selected loadouts |
-
-## Limits and Bans
-
-TAMods-Server allows for limiting class numbers, banning weapons, and also restricting the available equip points (i.e. item slots) for players.
-
-### Class Limits
-
-| Variable                        | Type | Default | Description                                |
-|---------------------------------|------|---------|--------------------------------------------|
-| ServerSettings.LightCountLimit  | int  | 32      | Maximum number of lights allowed per team  |
-| ServerSettings.MediumCountLimit | int  | 32      | Maximum number of mediums allowed per team |
-| ServerSettings.HeavyCountLimit  | int  | 32      | Maximum number of heavies allowed per team |
-
-### Weapon Bans
-
-Weapon bans can be added or removed via the following functions:
-
-`BannedItems.add(class: string, itemName: string)`
-
-`BannedItems.remove(class: string, itemName: string)`
-
-So for instance, to ban the Light Spinfusor, the Assault Rifle and the Nova Colt, you would use:
-
-```lua
-BannedItems.add("Light", "Light Spinfusor")
-BannedItems.add("Medium", "Assault Rifle")
-BannedItems.add("Heavy", "Nova Colt")
-```
-
-### Equipment Slots
-
-You can also restrict the equipment slots available based on class. This can be used to, for instance, give the Light class two weapons rather than three, or to ban grenades. The equip point is selected using the [Equip Points](#equip-points) enum.
-
-`DisabledEquipPoints.add(class: string, equipPoint: EquipPoint)`
-
-`DisabledEquipPoints.remove(class: string, equipPoint: EquipPoint)`
-
-So to give Lights and Mediums two weapons rather than three, you would use:
-
-```lua
-DisabledEquipPoints.add("Light", Loadouts.EquipPoints.Tertiary)
-DisabledEquipPoints.add("Medium", Loadouts.EquipPoints.Tertiary)
-```
 
 ## Map Rotation
 

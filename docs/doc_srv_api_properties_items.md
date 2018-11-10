@@ -1,7 +1,7 @@
 ---
 id: doc_srv_api_properties_items
 title: Game Balance - Items
-sidebar_label: Game Balance - Items
+sidebar_label: Items
 ---
 
 ## Overview

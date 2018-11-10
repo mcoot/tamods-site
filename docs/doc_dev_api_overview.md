@@ -18,4 +18,6 @@ Note that where functions do not return a value, the `ReturnType` is omitted.
 
 For clarity, the types `integer` and `float` are used to distinguish numerical arguments where appropriate, even though Lua's type system only supports a single `number` type.
 
-Lua does not support 'arrays' in the traditional sense: most data structures in Lua are _Tables_. In the reference, `List<T>` is used to refer to a "list" of items of type `T`, where the "list" is actually a Table with sequentially numbered zero-indexed keys.
+Lua does not support 'arrays' or 'tuples' in the traditional sense: most data structures in Lua are _Tables_. In the reference, `List<T>` is used to refer to a "list" of items of type `T`, where the "list" is actually a Table with sequentially numbered one-indexed keys (as Lua indexing normally starts at one).
+
+Tuples in Lua are essentially the same; in the reference they will be denoted like `(T1, T2)` where `T1` is the type of the first element, `T2` the second and so on. This corresponds again to a Lua Table with sequentially numbered one-indexed keys.

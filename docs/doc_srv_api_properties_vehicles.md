@@ -1,7 +1,7 @@
 ---
 id: doc_srv_api_properties_vehicles
 title: Game Balance - Vehicles
-sidebar_label: Game Balance - Vehicles
+sidebar_label: Vehicles
 ---
 
 ## Overview

@@ -1,12 +1,12 @@
 ---
 id: doc_srv_api_properties_classes
 title: Game Balance - Classes
-sidebar_label: Game Balance - Classes
+sidebar_label: Classes
 ---
 
 ## Overview
 
-Class Property Modification can be used to modify the balance properties inherent to player classes (i.e. light, medium, heavy).
+Class Property Modification can be used to modify the balance properties inherent to player classes (i.e. Light, Medium, Heavy, or pre-OOTB classes like Pathfinder, Sentinel or Brute).
 
 All class modification functions and properties fall under the `Classes` namespace. Properties fall under the `Classes.Properties` namespace. So for instance, one could reference a property with `Classes.Properties.HealthPool`.
 
