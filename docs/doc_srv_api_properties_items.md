@@ -44,14 +44,19 @@ Logger.info("New AR clip size: " .. Items.getProperty("Medium", "Light Assault R
 
 ## Reloading and Firing
 
-| Property                    | Type    | Applicable Items    | Value Restrictions | Units   | Description                                                                                    |
-| --------------------------- | ------- | ------------------- | ------------------ | ------- | ---------------------------------------------------------------------------------------------- |
-| ReloadTime                  | float   | Shot weapons        | > 0                | Seconds | Reload time                                                                                    |
-| FireInterval                | float   | Shot weapons        | > 0                | Seconds | Time between shots                                                                             |
-| HoldToFire                  | boolean | All weapons         |                    |         | (Currently not working) Whether the player can hold the button to keep firing                  |
-| CanZoom                     | boolean | All weapons         |                    |         | (Currently not working) Whether the weapon may be fired while zoomed                           |
-| ReloadSingle                | boolean | Weapons with a clip |                    |         | Whether the weapon should be reloaded one bullet at a time, like the Light's shotgun           |
-| ReloadApplicationProportion | float   | Shot weapons        | 0 <= x <= 1        |         | Proportion of the way through the reload that ammo actually reloads; affects reload cancelling |
+| Property                    | Type    | Applicable Items         | Value Restrictions | Units   | Description                                                                                    |
+| --------------------------- | ------- | ------------------------ | ------------------ | ------- | ---------------------------------------------------------------------------------------------- |
+| ReloadTime                  | float   | Shot weapons             | > 0                | Seconds | Reload time                                                                                    |
+| FireInterval                | float   | Shot weapons             | > 0                | Seconds | Time between shots                                                                             |
+| HoldToFire                  | boolean | All weapons              |                    |         | Whether the player can hold the button to keep firing                                          |
+| CanZoom                     | boolean | All weapons              |                    |         | (Currently not working) Whether the weapon may be fired while zoomed                           |
+| ReloadSingle                | boolean | Weapons with a clip      |                    |         | Whether the weapon should be reloaded one bullet at a time, like the Light's shotgun           |
+| ReloadApplicationProportion | float   | Shot weapons             | 0 <= x <= 1        |         | Proportion of the way through the reload that ammo actually reloads; affects reload cancelling |
+| BurstShotCount              | integer | Light Assault Rifle      | > 0                | Bullets | Number of shots in a LAR burst                                                                 |
+| BurstShotRefireTime         | float   | Light Assault Rifle      | > 0                | Seconds | Time between shots in a LAR burst                                                              |
+| SpinupTime                  | float   | Chain gun/cannon, X1 LMG | >= 0               | Seconds | Time for chain-gun type weapons to spin up before firing begins                                |
+| ShotgunShotCount            | integer | Shotguns                 | > 0                | Shots   | Number of shots fired with each shotgun blast                                                  |
+| ShotEnergyCost              | float   | Shot weapons             | >= 0               | Energy  | Amount of energy consumed by shooting                                                          |
 
 ## Damage and Impact
 
@@ -124,6 +129,17 @@ The formula for the final proportion of the normal damage after falloff is:
 
 where `x` is the distance, `r` is the damage range, `m` is the minimum damage proportion, `p_max` is the maximum range proportion and `p_min` is the minimum range proportion.
 
+### Sniper Rifles
+
+| Property                 | Type  | Applicable Items   | Value Restrictions | Units   | Description                                                     |
+| ------------------------ | ----- | ------------------ | ------------------ | ------- | --------------------------------------------------------------- |
+| PhaseDamagePerEnergy     | float | Phase Rifle, SAP20 | > 0                | Damage  | Damage done per unit energy consumed by the Phase Rifle / SAP20 |
+| PhaseMaxConsumedEnergy   | float | Phase Rifle, SAP20 | > 0                | Damage  | Maximum energy consumed by the Phase Rifle                      |
+| BXTChargeMaxDamage       | float | BXT1               | > 0                | Damage  | Damage done by the BXT when fully charged                       |
+| BXTChargeTime            | float | BXT1               | > 0                | Seconds | Time for a full BXT charge                                      |
+| BXTChargeMultCoefficient | float | BXT1               | > 0                |         | Multiplicative coefficient controlling BXT charge curve         |
+| BXTChargeDivCoefficient  | float | BXT1               | > 0                |         | Divisor coefficient controlling BXTcharge curve                 |
+
 ### Miscellaneous
 
 | Property         | Type    | Applicable Items  | Value Restrictions | Units        | Description                                                             |
@@ -151,6 +167,19 @@ where `x` is the distance, `r` is the damage range, `m` is the minimum damage pr
 | FireOffsetY                | float | All weapons        |                    | UU     | Offset to the player of the spawned projectile in the Y direction (left/right)         |
 | FireOffsetZ                | float | All weapons        |                    | UU     | Offset to the player of the spawned projectile in the Z direction (up/down)            |
 
+## Fractal Grenades
+
+| Property                 | Type  | Applicable Items | Value Restrictions | Units   | Description                                                       |
+| ------------------------ | ----- | ---------------- | ------------------ | ------- | ----------------------------------------------------------------- |
+| FractalDuration          | float | Fractals         | > 0                | Seconds | Duration of the Fractal effect                                    |
+| FractalShardInterval     | float | Fractals         | > 0                | Seconds | Interval at which Fractal 'shards' fire                           |
+| FractalAscentTime        | float | Fractals         | > 0                | Seconds | How long the Fractal takes to float off the ground to full height |
+| FractalAscentHeight      | float | Fractals         | >= 0               | UU      | Height off the ground that the Fractal ascends to                 |
+| FractalShardDistance     | float | Fractals         | > 0                | UU      | Horizontal distance which Fractal shards extend to                |
+| FractalShardHeight       | float | Fractals         | >= 0               | UU      | Vertical distance above/below the Fractal which shards extend to  |
+| FractalShardDamage       | float | Fractals         | >= 0               | Damage  | Damage done by each shard                                         |
+| FractalShardDamageRadius | float | Fractals         | > 0                | UU      | Damage radius from the end of each shard                          |
+
 ## Melee
 
 | Property          | Type  | Applicable Items | Value Restrictions | Units   | Description                                |
@@ -160,20 +189,27 @@ where `x` is the distance, `r` is the damage range, `m` is the minimum damage pr
 
 ## Accuracy
 
-| Property               | Type  | Applicable Items | Value Restrictions | Units | Description                                     |
-| ---------------------- | ----- | ---------------- | ------------------ | ----- | ----------------------------------------------- |
-| Accuracy               | float | All weapons      | 0 <= x <= 1        |       | Proportion of accuracy for the weapon's shot    |
-| AccuracyLossOnShot     | float | All weapons      | 0 <= x <= 1        |       | Accuracy decrease after shooting                |
-| AccuracyLossOnJump     | float | All weapons      | 0 <= x <= 1        |       | Accuracy decrease when jumping                  |
-| AccuracyLossMax        | float | All weapons      | 0 <= x <= 1        |       | Maximum decrease in accuracy at a given time    |
-| AccuracyCorrectionRate | float | All weapons      | 0 <= x <= 1        |       | Rate at which accuracy returns after decreasing |
+| Property               | Type    | Applicable Items | Value Restrictions | Units | Description                                                                                                                  |
+| ---------------------- | ------- | ---------------- | ------------------ | ----- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Accuracy               | float   | All weapons      | 0 <= x <= 1        |       | Proportion of accuracy for the weapon's shot                                                                                 |
+| AccuracyLossOnShot     | float   | All weapons      | 0 <= x <= 1        |       | Accuracy decrease after shooting                                                                                             |
+| AccuracyLossOnJump     | float   | All weapons      | 0 <= x <= 1        |       | Accuracy decrease when jumping                                                                                               |
+| AccuracyLossMax        | float   | All weapons      | 0 <= x <= 1        |       | Maximum decrease in accuracy at a given time                                                                                 |
+| AccuracyCorrectionRate | float   | All weapons      | 0 <= x <= 1        |       | Rate at which accuracy returns after decreasing                                                                              |
+| ShotgunUseGOTYSpread   | boolean | Shotguns         |                    |       | Whether to use the older GOTY-patch shotgun spread (tighter, random) as opposed to the OOTB-patch spread (wider, non-random) |
 
 ## Grenades and Thrown Weapons
 
-| Property         | Type  | Applicable Items | Value Restrictions | Units | Description                                                                           |
-| ---------------- | ----- | ---------------- | ------------------ | ----- | ------------------------------------------------------------------------------------- |
-| ThrowDelay       | float | Thrown weapons   | >= 0               | S     | Time taken for the projectile to be thrown                                            |
-| ThrowPullPinTime | float | Thrown weapons   | >= 0               | S     | Time before the pin is pulled; after this it will be spawned even if the thrower dies |
+| Property                | Type    | Applicable Items | Value Restrictions | Units | Description                                                                           |
+| ----------------------- | ------- | ---------------- | ------------------ | ----- | ------------------------------------------------------------------------------------- |
+| ThrowDelay              | float   | Thrown weapons   | >= 0               | S     | Time taken for the projectile to be thrown                                            |
+| ThrowPullPinTime        | float   | Thrown weapons   | >= 0               | S     | Time before the pin is pulled; after this it will be spawned even if the thrower dies |
+| StuckDamageMultiplier   | float   | Sticky weapons   | >= 0               |       | Multiplier for damage when projectile is stuck to an enemy                            |
+| StuckMomentumMultiplier | float   | Sticky weapons   | >= 0               |       | Multiplier for impulse when projectile is stuck to an enemy                           |
+| FuseTimer               | float   | Thrown Weapons   | >= 0               | S     | Fuse time on the grenade                                                              |
+| ExplodeOnContact        | boolean | Thrown weapons   |                    |       | Whether the projectile explodes on contact with an enemy                              |
+| ExplodeOnFuse           | boolean | Thrown weapons   |                    |       | Whether the projectile explodes after its fuse timer                                  |
+| MustBounceBeforeExplode | boolean | Thrown weapons   |                    |       | Whether the projectile must bounce at least once before exploding due to a fuse       |
 
 ## Packs
 

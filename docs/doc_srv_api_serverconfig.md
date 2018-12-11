@@ -87,12 +87,13 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 
 #### Gameplay Customisation
 
-| Variable                           | Type    | Default | Description                                                       |
-|------------------------------------|---------|---------|-------------------------------------------------------------------|
-| ServerSettings.EnergyMultiplier    | float   | 1.0     | Multiplier affecting the energy pools of all players              |
-| ServerSettings.AoESizeMultiplier   | float   | 1.0     | Multiplier affecting the size of all Area-of-Effect explosions    |
-| ServerSettings.AoEDamageMultiplier | float   | 1.0     | Multiplier affecting the damage done by Area-of-Effect explosions |
-| ServerSettings.SkiingEnabled       | boolean | true    | Whether skiing is enabled                                         |
+| Variable                           | Type    | Default | Description                                                                                                                     |
+| ---------------------------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| ServerSettings.EnergyMultiplier    | float   | 1.0     | Multiplier affecting the energy pools of all players                                                                            |
+| ServerSettings.AoESizeMultiplier   | float   | 1.0     | Multiplier affecting the size of all Area-of-Effect explosions                                                                  |
+| ServerSettings.AoEDamageMultiplier | float   | 1.0     | Multiplier affecting the damage done by Area-of-Effect explosions                                                               |
+| ServerSettings.SkiingEnabled       | boolean | true    | Whether skiing is enabled                                                                                                       |
+| ServerSettings.UseGOTYShieldPack   | boolean | false   | If true, shield pack effects are reverted to GOTY patch behaviour - i.e. the heavy shield pack will not reduce received impulse |
 
 #### Flag Drag
 
