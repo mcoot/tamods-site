@@ -57,10 +57,15 @@ Logger.info(<span class="hljs-string">"New AR clip size: "</span> .. Items.getPr
 <tbody>
 <tr><td>ReloadTime</td><td>float</td><td>Shot weapons</td><td>&gt; 0</td><td>Seconds</td><td>Reload time</td></tr>
 <tr><td>FireInterval</td><td>float</td><td>Shot weapons</td><td>&gt; 0</td><td>Seconds</td><td>Time between shots</td></tr>
-<tr><td>HoldToFire</td><td>boolean</td><td>All weapons</td><td></td><td></td><td>(Currently not working) Whether the player can hold the button to keep firing</td></tr>
+<tr><td>HoldToFire</td><td>boolean</td><td>All weapons</td><td></td><td></td><td>Whether the player can hold the button to keep firing</td></tr>
 <tr><td>CanZoom</td><td>boolean</td><td>All weapons</td><td></td><td></td><td>(Currently not working) Whether the weapon may be fired while zoomed</td></tr>
 <tr><td>ReloadSingle</td><td>boolean</td><td>Weapons with a clip</td><td></td><td></td><td>Whether the weapon should be reloaded one bullet at a time, like the Light's shotgun</td></tr>
 <tr><td>ReloadApplicationProportion</td><td>float</td><td>Shot weapons</td><td>0 &lt;= x &lt;= 1</td><td></td><td>Proportion of the way through the reload that ammo actually reloads; affects reload cancelling</td></tr>
+<tr><td>BurstShotCount</td><td>integer</td><td>Light Assault Rifle</td><td>&gt; 0</td><td>Bullets</td><td>Number of shots in a LAR burst</td></tr>
+<tr><td>BurstShotRefireTime</td><td>float</td><td>Light Assault Rifle</td><td>&gt; 0</td><td>Seconds</td><td>Time between shots in a LAR burst</td></tr>
+<tr><td>SpinupTime</td><td>float</td><td>Chain gun/cannon, X1 LMG</td><td>&gt;= 0</td><td>Seconds</td><td>Time for chain-gun type weapons to spin up before firing begins</td></tr>
+<tr><td>ShotgunShotCount</td><td>integer</td><td>Shotguns</td><td>&gt; 0</td><td>Shots</td><td>Number of shots fired with each shotgun blast</td></tr>
+<tr><td>ShotEnergyCost</td><td>float</td><td>Shot weapons</td><td>&gt;= 0</td><td>Energy</td><td>Amount of energy consumed by shooting</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="damage-and-impact"></a><a href="#damage-and-impact" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Damage and Impact</h2>
@@ -132,6 +137,20 @@ Logger.info(<span class="hljs-string">"New AR clip size: "</span> .. Items.getPr
 <p>The formula for the final proportion of the normal damage after falloff is:</p>
 <p><img src="/docs/assets/doc_srv_api_properties_items_falloff_eqn.png" alt="Function describing damage done"></p>
 <p>where <code>x</code> is the distance, <code>r</code> is the damage range, <code>m</code> is the minimum damage proportion, <code>p_max</code> is the maximum range proportion and <code>p_min</code> is the minimum range proportion.</p>
+<h3><a class="anchor" aria-hidden="true" id="sniper-rifles"></a><a href="#sniper-rifles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sniper Rifles</h3>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Applicable Items</th><th>Value Restrictions</th><th>Units</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>PhaseDamagePerEnergy</td><td>float</td><td>Phase Rifle, SAP20</td><td>&gt; 0</td><td>Damage</td><td>Damage done per unit energy consumed by the Phase Rifle / SAP20</td></tr>
+<tr><td>PhaseMaxConsumedEnergy</td><td>float</td><td>Phase Rifle, SAP20</td><td>&gt; 0</td><td>Damage</td><td>Maximum energy consumed by the Phase Rifle</td></tr>
+<tr><td>BXTChargeMaxDamage</td><td>float</td><td>BXT1</td><td>&gt; 0</td><td>Damage</td><td>Damage done by the BXT when fully charged</td></tr>
+<tr><td>BXTChargeTime</td><td>float</td><td>BXT1</td><td>&gt; 0</td><td>Seconds</td><td>Time for a full BXT charge</td></tr>
+<tr><td>BXTChargeMultCoefficient</td><td>float</td><td>BXT1</td><td>&gt; 0</td><td></td><td>Multiplicative coefficient controlling BXT charge curve</td></tr>
+<tr><td>BXTChargeDivCoefficient</td><td>float</td><td>BXT1</td><td>&gt; 0</td><td></td><td>Divisor coefficient controlling BXTcharge curve</td></tr>
+</tbody>
+</table>
 <h3><a class="anchor" aria-hidden="true" id="miscellaneous"></a><a href="#miscellaneous" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Miscellaneous</h3>
 <table>
 <thead>
@@ -164,6 +183,22 @@ Logger.info(<span class="hljs-string">"New AR clip size: "</span> .. Items.getPr
 <tr><td>FireOffsetZ</td><td>float</td><td>All weapons</td><td></td><td>UU</td><td>Offset to the player of the spawned projectile in the Z direction (up/down)</td></tr>
 </tbody>
 </table>
+<h2><a class="anchor" aria-hidden="true" id="fractal-grenades"></a><a href="#fractal-grenades" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fractal Grenades</h2>
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Applicable Items</th><th>Value Restrictions</th><th>Units</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>FractalDuration</td><td>float</td><td>Fractals</td><td>&gt; 0</td><td>Seconds</td><td>Duration of the Fractal effect</td></tr>
+<tr><td>FractalShardInterval</td><td>float</td><td>Fractals</td><td>&gt; 0</td><td>Seconds</td><td>Interval at which Fractal 'shards' fire</td></tr>
+<tr><td>FractalAscentTime</td><td>float</td><td>Fractals</td><td>&gt; 0</td><td>Seconds</td><td>How long the Fractal takes to float off the ground to full height</td></tr>
+<tr><td>FractalAscentHeight</td><td>float</td><td>Fractals</td><td>&gt;= 0</td><td>UU</td><td>Height off the ground that the Fractal ascends to</td></tr>
+<tr><td>FractalShardDistance</td><td>float</td><td>Fractals</td><td>&gt; 0</td><td>UU</td><td>Horizontal distance which Fractal shards extend to</td></tr>
+<tr><td>FractalShardHeight</td><td>float</td><td>Fractals</td><td>&gt;= 0</td><td>UU</td><td>Vertical distance above/below the Fractal which shards extend to</td></tr>
+<tr><td>FractalShardDamage</td><td>float</td><td>Fractals</td><td>&gt;= 0</td><td>Damage</td><td>Damage done by each shard</td></tr>
+<tr><td>FractalShardDamageRadius</td><td>float</td><td>Fractals</td><td>&gt; 0</td><td>UU</td><td>Damage radius from the end of each shard</td></tr>
+</tbody>
+</table>
 <h2><a class="anchor" aria-hidden="true" id="melee"></a><a href="#melee" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Melee</h2>
 <table>
 <thead>
@@ -185,6 +220,7 @@ Logger.info(<span class="hljs-string">"New AR clip size: "</span> .. Items.getPr
 <tr><td>AccuracyLossOnJump</td><td>float</td><td>All weapons</td><td>0 &lt;= x &lt;= 1</td><td></td><td>Accuracy decrease when jumping</td></tr>
 <tr><td>AccuracyLossMax</td><td>float</td><td>All weapons</td><td>0 &lt;= x &lt;= 1</td><td></td><td>Maximum decrease in accuracy at a given time</td></tr>
 <tr><td>AccuracyCorrectionRate</td><td>float</td><td>All weapons</td><td>0 &lt;= x &lt;= 1</td><td></td><td>Rate at which accuracy returns after decreasing</td></tr>
+<tr><td>ShotgunUseGOTYSpread</td><td>boolean</td><td>Shotguns</td><td></td><td></td><td>Whether to use the older GOTY-patch shotgun spread (tighter, random) as opposed to the OOTB-patch spread (wider, non-random)</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="grenades-and-thrown-weapons"></a><a href="#grenades-and-thrown-weapons" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grenades and Thrown Weapons</h2>
@@ -195,6 +231,12 @@ Logger.info(<span class="hljs-string">"New AR clip size: "</span> .. Items.getPr
 <tbody>
 <tr><td>ThrowDelay</td><td>float</td><td>Thrown weapons</td><td>&gt;= 0</td><td>S</td><td>Time taken for the projectile to be thrown</td></tr>
 <tr><td>ThrowPullPinTime</td><td>float</td><td>Thrown weapons</td><td>&gt;= 0</td><td>S</td><td>Time before the pin is pulled; after this it will be spawned even if the thrower dies</td></tr>
+<tr><td>StuckDamageMultiplier</td><td>float</td><td>Sticky weapons</td><td>&gt;= 0</td><td></td><td>Multiplier for damage when projectile is stuck to an enemy</td></tr>
+<tr><td>StuckMomentumMultiplier</td><td>float</td><td>Sticky weapons</td><td>&gt;= 0</td><td></td><td>Multiplier for impulse when projectile is stuck to an enemy</td></tr>
+<tr><td>FuseTimer</td><td>float</td><td>Thrown Weapons</td><td>&gt;= 0</td><td>S</td><td>Fuse time on the grenade</td></tr>
+<tr><td>ExplodeOnContact</td><td>boolean</td><td>Thrown weapons</td><td></td><td></td><td>Whether the projectile explodes on contact with an enemy</td></tr>
+<tr><td>ExplodeOnFuse</td><td>boolean</td><td>Thrown weapons</td><td></td><td></td><td>Whether the projectile explodes after its fuse timer</td></tr>
+<tr><td>MustBounceBeforeExplode</td><td>boolean</td><td>Thrown weapons</td><td></td><td></td><td>Whether the projectile must bounce at least once before exploding due to a fuse</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="packs"></a><a href="#packs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Packs</h2>
@@ -245,4 +287,4 @@ Logger.info(<span class="hljs-string">"New AR clip size: "</span> .. Items.getPr
 <tr><td>PrismMineTripDistance</td><td>float</td><td>Prism Mines</td><td>&gt;= 0</td><td>UU</td><td>Amount the Prism Mine's tripwire extends left and right</td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/doc_srv_api_properties_valuemods.html">← Game Balance - ValueMods</a><a class="docs-next button" href="/docs/doc_srv_api_properties_classes.html">Game Balance - Classes →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a><ul class="toc-headings"><li><a href="#setting-item-properties">Setting Item Properties</a></li></ul></li><li><a href="#ammo">Ammo</a></li><li><a href="#reloading-and-firing">Reloading and Firing</a></li><li><a href="#damage-and-impact">Damage and Impact</a><ul class="toc-headings"><li><a href="#damage">Damage</a></li><li><a href="#impulse">Impulse</a></li><li><a href="#falloff">Falloff</a></li><li><a href="#miscellaneous">Miscellaneous</a></li></ul></li><li><a href="#projectile-and-tracer">Projectile and Tracer</a></li><li><a href="#melee">Melee</a></li><li><a href="#accuracy">Accuracy</a></li><li><a href="#grenades-and-thrown-weapons">Grenades and Thrown Weapons</a></li><li><a href="#packs">Packs</a></li><li><a href="#deployables">Deployables</a></li><li><a href="#mines">Mines</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/img-blank.png" alt="TAMods" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc_user_install.html">Get TAMods</a><a href="/docs/en/doc_dev_intro.html">TAMods Documentation</a><a href="/docs/en/doc_srv_api_overview.html">TAMods-Server Documentation</a></div><div><h5>Community</h5><a href="http://www.reddit.com/r/tribes" target="_blank" rel="noreferrer noopener">Tribes Subreddit</a><a href="https://discord.gg/ySkx6Cg" target="_blank" rel="noreferrer noopener">Australian Tribes Discord</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/mcoot/tamods-site">Site GitHub</a></div></section><section class="copyright">Copyright © 2018 TAMods Team</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/doc_srv_api_properties_valuemods.html">← Game Balance - ValueMods</a><a class="docs-next button" href="/docs/doc_srv_api_properties_classes.html">Game Balance - Classes →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a><ul class="toc-headings"><li><a href="#setting-item-properties">Setting Item Properties</a></li></ul></li><li><a href="#ammo">Ammo</a></li><li><a href="#reloading-and-firing">Reloading and Firing</a></li><li><a href="#damage-and-impact">Damage and Impact</a><ul class="toc-headings"><li><a href="#damage">Damage</a></li><li><a href="#impulse">Impulse</a></li><li><a href="#falloff">Falloff</a></li><li><a href="#sniper-rifles">Sniper Rifles</a></li><li><a href="#miscellaneous">Miscellaneous</a></li></ul></li><li><a href="#projectile-and-tracer">Projectile and Tracer</a></li><li><a href="#fractal-grenades">Fractal Grenades</a></li><li><a href="#melee">Melee</a></li><li><a href="#accuracy">Accuracy</a></li><li><a href="#grenades-and-thrown-weapons">Grenades and Thrown Weapons</a></li><li><a href="#packs">Packs</a></li><li><a href="#deployables">Deployables</a></li><li><a href="#mines">Mines</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/img-blank.png" alt="TAMods" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc_user_install.html">Get TAMods</a><a href="/docs/en/doc_dev_intro.html">TAMods Documentation</a><a href="/docs/en/doc_srv_api_overview.html">TAMods-Server Documentation</a></div><div><h5>Community</h5><a href="http://www.reddit.com/r/tribes" target="_blank" rel="noreferrer noopener">Tribes Subreddit</a><a href="https://discord.gg/ySkx6Cg" target="_blank" rel="noreferrer noopener">Australian Tribes Discord</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/mcoot/tamods-site">Site GitHub</a></div></section><section class="copyright">Copyright © 2018 TAMods Team</section></footer></div></body></html>
