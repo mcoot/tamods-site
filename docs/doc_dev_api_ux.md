@@ -69,11 +69,12 @@ Set the in-game graphics gamma to the given value.
 
 #### Crosshairs
 
-| Variable         | Type    | Default            | Description                                                                      |
-|------------------|---------|--------------------|----------------------------------------------------------------------------------|
-| `showCrosshair`  | boolean | `true`             | Whether to show default crosshairs (disabling this does not disable hitmarkers!) |
-| `crosshairScale` | float   | `1.0`              | Scaling factor to apply to crosshairs                                            |
-| `crosshairColor` | Color   | `rgb(255,255,255)` | Colour to apply to crosshairs                                                    |
+| Variable             | Type    | Default            | Description                                                                                                                       |
+| -------------------- | ------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| `showCrosshair`      | boolean | `true`             | Whether to show default crosshairs (disabling this does not disable hitmarkers!)                                                  |
+| `showLaserCrosshair` | boolean | `false`            | When `showCrosshair` is false, whether the laser targeter crosshair should still be shown (so that e.g. call-in progress appears) |
+| `crosshairScale`     | float   | `1.0`              | Scaling factor to apply to crosshairs                                                                                             |
+| `crosshairColor`     | Color   | `rgb(255,255,255)` | Colour to apply to crosshairs                                                                                                     |
 
 #### Icons
 
