@@ -3,7 +3,7 @@
 <url> <loc>http://www.tamods.org/help.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://www.tamods.org/en/help.html" /> </url>
 <url> <loc>http://www.tamods.org/index.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://www.tamods.org/en/index.html" /> </url>
 <url> <loc>http://www.tamods.org/users.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="http://www.tamods.org/en/users.html" /> </url>
-<url> <loc>http://www.tamods.org/2018/07/15/tamods-0.7</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
+<url> <loc>http://www.tamods.org/blog/2018/07/15/tamods-0.7.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>http://www.tamods.org/docs/doc_dev_api_consolecommands.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://www.tamods.org/docs/doc_dev_api_consolecommands.html" /> </url>
 <url> <loc>http://www.tamods.org/docs/doc_dev_api_datatypes.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://www.tamods.org/docs/doc_dev_api_datatypes.html" /> </url>
 <url> <loc>http://www.tamods.org/docs/doc_dev_api_drawing.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="http://www.tamods.org/docs/doc_dev_api_drawing.html" /> </url>
