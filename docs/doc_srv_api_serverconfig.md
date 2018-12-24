@@ -102,6 +102,7 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 | ServerSettings.AoEDamageMultiplier | float   | 1.0     | Multiplier affecting the damage done by Area-of-Effect explosions                                                               |
 | ServerSettings.SkiingEnabled       | boolean | true    | Whether skiing is enabled                                                                                                       |
 | ServerSettings.UseGOTYShieldPack   | boolean | false   | If true, shield pack effects are reverted to GOTY patch behaviour - i.e. the heavy shield pack will not reduce received impulse |
+| ServerSettings.UseGOTYBXTCharging  | boolean | false   | If true, the BXT rifles work as in GOTY with respect to charging and unscoped damage                                            |
 
 #### Flag Drag
 
