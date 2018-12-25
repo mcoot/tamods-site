@@ -258,7 +258,11 @@ Provides information about the player's weapon loadout.
 
 `weapon.name(eqp: EquipPoint): string`
 
-Returns the name of the weapon equipped at EquipPoint `eqp` (see the EquipPoint enum definition.
+Returns the name of the weapon equipped at EquipPoint `eqp` (see the EquipPoint enum definition).
+
+`weapon.itemId(eqp: EquipPoint): int`
+
+Gets the Item ID for the weapon at `eqp`.
 
 `weapon.isPack(eqp: EquipPoint): boolean`
 
@@ -315,6 +319,10 @@ Provides information about the weapon the player is currently using.
 `currentWeapon.name(): string`
 
 Gets the current weapon's name.
+
+`currentWeapon.itemId(): int`
+
+Gets the Item ID for the current weapon.
 
 `currentWeapon.equippedAt(): EquipPoint`
 
