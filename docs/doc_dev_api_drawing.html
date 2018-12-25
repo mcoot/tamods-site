@@ -79,9 +79,9 @@ console(<span class="hljs-string">"AND IT GIVES YOU NICE PURPLE TEXT"</span>, c3
 <h3><a class="anchor" aria-hidden="true" id="textalignment-enum"></a><a href="#textalignment-enum" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TextAlignment Enum</h3>
 <p>Enumerates the possible text alignments.</p>
 <ul>
-<li><code>TEXT_ALIGN_LEFT</code> = 0 - Left-aligned</li>
-<li><code>TEXT_ALIGN_CENTER</code> = 0 - Center-aligned</li>
-<li><code>TEXT_ALIGN_RIGHT</code> = 0 - Right-aligned</li>
+<li><code>enums.TEXT_ALIGN_LEFT</code> = 0 - Left-aligned</li>
+<li><code>enums.TEXT_ALIGN_CENTER</code> = 0 - Center-aligned</li>
+<li><code>enums.TEXT_ALIGN_RIGHT</code> = 0 - Right-aligned</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="viewport-information"></a><a href="#viewport-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Viewport Information</h3>
 <p>The <code>viewport</code> namespace gives information about the current HUD viewport (drawable area).</p>
@@ -116,7 +116,7 @@ console(<span class="hljs-string">"AND IT GIVES YOU NICE PURPLE TEXT"</span>, c3
 <p><code>getTextSize(text: string, scale: float): Vector2</code></p>
 <p>Get the display size of the given text printed in damage number font, as a <a href="/docs/doc_dev_api_datatypes.html#vector2">2D vector</a>.</p>
 <h4><a class="anchor" aria-hidden="true" id="small-font"></a><a href="#small-font" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Small Font</h4>
-<p><code>drawSmallText(text: string, color: Color, x: float, y: float, alignment: TextAlignment: shadowSize: integer, scale: float)</code></p>
+<p><code>drawSmallText(text: string, color: Color, x: float, y: float, alignment: TextAlignment, shadowSize: integer, scale: float)</code></p>
 <p>Draw text in the console font. The <code>shadowSize</code> value determines the distance of the drop shadow (<code>0</code> gives no shadow). The <code>scale</code> parameter performs bitmap scaling.</p>
 <p><code>getSmallTextSize(text: string, scale: float): Vector2</code></p>
 <p>Get the display size of the text in the console font.</p>

@@ -186,7 +186,9 @@
 <h2><a class="anchor" aria-hidden="true" id="weapon"></a><a href="#weapon" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Weapon</h2>
 <p>Provides information about the player's weapon loadout.</p>
 <p><code>weapon.name(eqp: EquipPoint): string</code></p>
-<p>Returns the name of the weapon equipped at EquipPoint <code>eqp</code> (see the EquipPoint enum definition.</p>
+<p>Returns the name of the weapon equipped at EquipPoint <code>eqp</code> (see the EquipPoint enum definition).</p>
+<p><code>weapon.itemId(eqp: EquipPoint): int</code></p>
+<p>Gets the Item ID for the weapon at <code>eqp</code>.</p>
 <p><code>weapon.isPack(eqp: EquipPoint): boolean</code></p>
 <p>Returns true if the weapon at <code>eqp</code> is a pack item.</p>
 <p><code>weapon.isReadyToFire(eqp: EquipPoint): boolean</code></p>
@@ -215,10 +217,14 @@
 <p>Provides information about the weapon the player is currently using.</p>
 <p><code>currentWeapon.name(): string</code></p>
 <p>Gets the current weapon's name.</p>
+<p><code>currentWeapon.itemId(): int</code></p>
+<p>Gets the Item ID for the current weapon.</p>
 <p><code>currentWeapon.equippedAt(): EquipPoint</code></p>
 <p>Get the equip point of the current weapon.</p>
 <p><code>currentWeapon.reticuleIndex(): ReticuleType</code></p>
 <p>Gets the reticule type for the current weapon (see the ReticuleType enum definition).</p>
+<p><code>currentWeapon.isZoomed(): boolean</code></p>
+<p>Returns true if the player is currently zoomed in with their weapon.</p>
 <p><code>currentWeapon.isPack(): boolean</code></p>
 <p>Returns true if the current weapon is a pack item.</p>
 <p><code>currentWeapon.reloadTime(): float</code></p>
@@ -243,6 +249,12 @@
 <p>Gets the maximum amount of spare ammo, not including the initial full clip.</p>
 <p><code>currentWeapon.ammoTotal(): integer</code></p>
 <p>Gets the total amount of current ammo, including the current clip and spare ammo.</p>
+<p><code>currentWeapon.sniperChargePct(): float</code></p>
+<p>If the current weapon is a sniper rifle (BXT1, BXT1A, Phase Rifle or SAP20), get the proportion of BXT charge or energy charge for phase.</p>
+<p><code>currentWeapon.laserTargeterChargePct(): float</code></p>
+<p>If the current weapon is the laser targeter, gets the current call-in buildup as a proportion between 0 and 1. Otherwise returns 0.</p>
+<p><code>currentWeapon.sniperDamage(): float</code></p>
+<p>If the current weapon is a sniper rifle (BXT1, BXT1A, Phase Rifle or SAP20), get the damage that would be done if fired right now, with respect to charge/energy.</p>
 <h2><a class="anchor" aria-hidden="true" id="vehicle"></a><a href="#vehicle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vehicle</h2>
 <p>Provides information about the vehicle the player is currently piloting. Will not provide useful information if the player is not in a vehicle.</p>
 <p><code>vehicle.name(): string</code></p>
