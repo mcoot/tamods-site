@@ -87,9 +87,9 @@ console("AND IT GIVES YOU NICE PURPLE TEXT", c3)
 
 Enumerates the possible text alignments.
 
-- `TEXT_ALIGN_LEFT` = 0 - Left-aligned
-- `TEXT_ALIGN_CENTER` = 0 - Center-aligned
-- `TEXT_ALIGN_RIGHT` = 0 - Right-aligned
+- `enums.TEXT_ALIGN_LEFT` = 0 - Left-aligned
+- `enums.TEXT_ALIGN_CENTER` = 0 - Center-aligned
+- `enums.TEXT_ALIGN_RIGHT` = 0 - Right-aligned
 
 ### Viewport Information
 
