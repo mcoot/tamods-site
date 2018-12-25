@@ -372,6 +372,13 @@ Gets the maximum amount of spare ammo, not including the initial full clip.
 
 Gets the total amount of current ammo, including the current clip and spare ammo.
 
+`currentWeapon.bxtCharge(): float`
+
+If the current weapon is the BXT1 or BXT1A, gets the current charge as a proportion between 0 and 1. Otherwise returns 0.
+
+`currentWeapon.laserTargeterCharge(): float`
+
+If the current weapon is the laser targeter, gets the current call-in buildup as a proportion between 0 and 1. Otherwise returns 0.
 
 ## Vehicle
 
