@@ -150,7 +150,7 @@ Get the display size of the given text printed in damage number font, as a [2D v
 
 #### Small Font
 
-`drawSmallText(text: string, color: Color, x: float, y: float, alignment: TextAlignment: shadowSize: integer, scale: float)`
+`drawSmallText(text: string, color: Color, x: float, y: float, alignment: TextAlignment, shadowSize: integer, scale: float)`
 
 Draw text in the console font. The `shadowSize` value determines the distance of the drop shadow (`0` gives no shadow). The `scale` parameter performs bitmap scaling.
 
