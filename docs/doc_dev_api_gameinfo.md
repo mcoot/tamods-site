@@ -332,6 +332,10 @@ Get the equip point of the current weapon.
 
 Gets the reticule type for the current weapon (see the ReticuleType enum definition).
 
+`currentWeapon.isZoomed(): boolean`
+
+Returns true if the player is currently zoomed in with their weapon.
+
 `currentWeapon.isPack(): boolean`
 
 Returns true if the current weapon is a pack item.
