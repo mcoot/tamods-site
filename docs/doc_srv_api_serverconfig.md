@@ -85,6 +85,14 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 | ServerSettings.BaseAssetFriendlyFire  | boolean | false   | Whether friendly fire applies to base assets               |
 | ServerSettings.DeployableFriendlyFire | boolean | false   | Whether friendly fire applies to deployables               |
 
+#### Call-In Options
+
+| Variable                                   | Type    | Default | Description                                                                        |
+| ------------------------------------------ | ------- | ------- | ---------------------------------------------------------------------------------- |
+| ServerSettings.EnableInventoryCallIn       | boolean | true    | Whether inventory station call-ins are enabled                                     |
+| ServerSettings.InventoryCallInBuildUpTime  | float   | 2       | Seconds it takes to call in an inventory station                                   |
+| ServerSettings.InventoryCallInCooldownTime | float   | 10      | Personal cooldown after calling in an inventory station before you can do so again |
+
 #### Gameplay Customisation
 
 | Variable                           | Type    | Default | Description                                                                                                                     |
@@ -94,6 +102,7 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 | ServerSettings.AoEDamageMultiplier | float   | 1.0     | Multiplier affecting the damage done by Area-of-Effect explosions                                                               |
 | ServerSettings.SkiingEnabled       | boolean | true    | Whether skiing is enabled                                                                                                       |
 | ServerSettings.UseGOTYShieldPack   | boolean | false   | If true, shield pack effects are reverted to GOTY patch behaviour - i.e. the heavy shield pack will not reduce received impulse |
+| ServerSettings.UseGOTYBXTCharging  | boolean | false   | If true, the BXT rifles work as in GOTY with respect to charging and unscoped damage                                            |
 
 #### Flag Drag
 
@@ -112,31 +121,31 @@ The map rotation is either _sequential_ (default), where each map is played in t
 
 This can be controlled via the following variable:
 
-`MapRotation.Mode`
+`ServerSettings.MapRotation.Mode`
 
 This should have one of the following values:
-- `MapRotation.Modes.Sequential`
-- `MapRotation.Modes.Random`
+- `ServerSettings.MapRotation.Modes.Sequential`
+- `ServerSettings.MapRotation.Modes.Random`
 
 ### Setting the Rotation
 
 The rotation itself may be controlled via the below functions:
 
-`MapRotation.add(map: Map)`
+`ServerSettings.MapRotation.add(map: Map)`
 
 Adds a map to the rotation. The map should be a value from the [Maps enum](#maps)
 
-`MapRotation.addCustom(mapName: string)`
+`ServerSettings.MapRotation.addCustom(mapName: string)`
 
 Adds a map to the rotation by filename (as located in the game's CookedPC/maps directory). Can be used to run a custom map.
 
 An example of adding maps to the rotation is given below:
 
 ```lua
-MapRotation.add(Maps.CTF.ArxNovena)
-MapRotation.add(Maps.TDM.DrydockNight)
-MapRotation.add(Maps.Arena.WalledIn)
-MapRotation.addCustom("TrCTF-Katabatic")
+ServerSettings.MapRotation.add(Maps.CTF.ArxNovena)
+ServerSettings.MapRotation.add(Maps.TDM.DrydockNight)
+ServerSettings.MapRotation.add(Maps.Arena.WalledIn)
+ServerSettings.MapRotation.addCustom("TrCTF-Katabatic")
 ```
 
 ### Maps

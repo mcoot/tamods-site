@@ -258,7 +258,11 @@ Provides information about the player's weapon loadout.
 
 `weapon.name(eqp: EquipPoint): string`
 
-Returns the name of the weapon equipped at EquipPoint `eqp` (see the EquipPoint enum definition.
+Returns the name of the weapon equipped at EquipPoint `eqp` (see the EquipPoint enum definition).
+
+`weapon.itemId(eqp: EquipPoint): int`
+
+Gets the Item ID for the weapon at `eqp`.
 
 `weapon.isPack(eqp: EquipPoint): boolean`
 
@@ -316,6 +320,10 @@ Provides information about the weapon the player is currently using.
 
 Gets the current weapon's name.
 
+`currentWeapon.itemId(): int`
+
+Gets the Item ID for the current weapon.
+
 `currentWeapon.equippedAt(): EquipPoint`
 
 Get the equip point of the current weapon.
@@ -323,6 +331,10 @@ Get the equip point of the current weapon.
 `currentWeapon.reticuleIndex(): ReticuleType`
 
 Gets the reticule type for the current weapon (see the ReticuleType enum definition).
+
+`currentWeapon.isZoomed(): boolean`
+
+Returns true if the player is currently zoomed in with their weapon.
 
 `currentWeapon.isPack(): boolean`
 
@@ -372,6 +384,17 @@ Gets the maximum amount of spare ammo, not including the initial full clip.
 
 Gets the total amount of current ammo, including the current clip and spare ammo.
 
+`currentWeapon.sniperChargePct(): float`
+
+If the current weapon is a sniper rifle (BXT1, BXT1A, Phase Rifle or SAP20), get the proportion of BXT charge or energy charge for phase.
+
+`currentWeapon.laserTargeterChargePct(): float`
+
+If the current weapon is the laser targeter, gets the current call-in buildup as a proportion between 0 and 1. Otherwise returns 0.
+
+`currentWeapon.sniperDamage(): float`
+
+If the current weapon is a sniper rifle (BXT1, BXT1A, Phase Rifle or SAP20), get the damage that would be done if fired right now, with respect to charge/energy.
 
 ## Vehicle
 
