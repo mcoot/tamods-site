@@ -95,14 +95,17 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 
 #### Gameplay Customisation
 
-| Variable                           | Type    | Default | Description                                                                                                                     |
-| ---------------------------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| ServerSettings.EnergyMultiplier    | float   | 1.0     | Multiplier affecting the energy pools of all players                                                                            |
-| ServerSettings.AoESizeMultiplier   | float   | 1.0     | Multiplier affecting the size of all Area-of-Effect explosions                                                                  |
-| ServerSettings.AoEDamageMultiplier | float   | 1.0     | Multiplier affecting the damage done by Area-of-Effect explosions                                                               |
-| ServerSettings.SkiingEnabled       | boolean | true    | Whether skiing is enabled                                                                                                       |
-| ServerSettings.UseGOTYShieldPack   | boolean | false   | If true, shield pack effects are reverted to GOTY patch behaviour - i.e. the heavy shield pack will not reduce received impulse |
-| ServerSettings.UseGOTYBXTCharging  | boolean | false   | If true, the BXT rifles work as in GOTY with respect to charging and unscoped damage                                            |
+| Variable                                      | Type    | Default | Description                                                                          |
+| --------------------------------------------- | ------- | ------- | ------------------------------------------------------------------------------------ |
+| ServerSettings.EnergyMultiplier               | float   | 1.0     | Multiplier affecting the energy pools of all players                                 |
+| ServerSettings.AoESizeMultiplier              | float   | 1.0     | Multiplier affecting the size of all Area-of-Effect explosions                       |
+| ServerSettings.AoEDamageMultiplier            | float   | 1.0     | Multiplier affecting the damage done by Area-of-Effect explosions                    |
+| ServerSettings.SkiingEnabled                  | boolean | true    | Whether skiing is enabled                                                            |
+| ServerSettings.UseGOTYShieldPack              | boolean | false   | If true, shield pack effects are reverted to GOTY patch behaviour*                   |
+| ServerSettings.UseGOTYBXTCharging             | boolean | false   | If true, the BXT rifles work as in GOTY with respect to charging and unscoped damage |
+| ServerSettings.InventoryStationsRestoreEnergy | boolean | false   | If true, players will have energy restored when entering an inventory station        |
+
+\* With UseGOTYShieldPack on, taking damage which is absorbed by shields will not block regen, and the heavy shield pack will not reduce impulse received when active.
 
 #### Flag Drag
 
