@@ -84,7 +84,8 @@ class HomeSplash extends React.Component {
           <PromoSection>
             <Button href={docUrl('doc_user_install.html', language)}>Get TAMods</Button>
             {/* <Button href={docUrl('doc_user_tutorial.html', language)}>Learn About The Features</Button> */}
-            <Button href={docUrl('doc_dev_intro.html', language)}>Read Developer Docs</Button>
+            <Button href={docUrl('doc_dev_intro.html', language)}>Clientside TAMods Docs</Button>
+            <Button href={docUrl('doc_srv_intro.html', language)}>Serverside TAMods Docs</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -130,10 +131,14 @@ const FeatureCallout = props => (
   <div
     className="productShowcaseSection paddingBottom"
     style={{textAlign: 'center'}}>
-    <h2>Customisation with a comprehensive Lua API</h2>
+    <h2>Configure and customise with a comprehensive Lua API</h2>
     <MarkdownBlock>
-      Build custom HUDs, record and replay routes, customise weapon models, import custom hitsounds, record game stats and much more...
+      Customise your game experience with clientside **TAMods**, including custom HUDs, route recording, stats recording and much more.
     </MarkdownBlock>
+    <MarkdownBlock>
+      Configure and host your own servers with **TAMods-Server**, powering "GOTY Tribes" with extensive game modification options.
+    </MarkdownBlock>
+
   </div>
 );
 
