@@ -231,13 +231,17 @@ where `x` is the distance, `r` is the damage range, `m` is the minimum damage pr
 
 ## Deployables
 
-| Property                  | Type    | Applicable Items   | Value Restrictions | Units | Description                                                  |
-| ------------------------- | ------- | ------------------ | ------------------ | ----- | ------------------------------------------------------------ |
-| DeployableRange           | float   | Deployables        | >= 0               | UU    | Range of a deployable (e.g. turret range)                    |
-| DeployableMaxAllowed      | integer | Deployables        | >= 0               |       | Maximum number of deployables of this type a player can have |
-| DeployableMinProximity    | float   | Deployables        | >= 0               | UU    | How close two deployables of the same type can be placed     |
-| TurretTimeToAcquireTarget | float   | Deployable Turrets | >= 0               | S     | How long a turret takes to lock onto a target                |
-| TurretCanTargetVehicle    | boolean | Deployable Turrets |                    |       | Whether the turret can target vehicles                       |
+| Property                  | Type    | Applicable Items   | Value Restrictions | Units  | Description                                                                       |
+| ------------------------- | ------- | ------------------ | ------------------ | ------ | --------------------------------------------------------------------------------- |
+| DeployableRange           | float   | Deployables        | >= 0               | UU     | Range of a deployable (e.g. turret range)                                         |
+| DeployableMaxAllowed      | integer | Deployables        | >= 0               |        | Maximum number of deployables of this type a player can have                      |
+| DeployableMinProximity    | float   | Deployables        | >= 0               | UU     | How close two deployables of the same type can be placed                          |
+| TurretTimeToAcquireTarget | float   | Deployable Turrets | >= 0               | S      | How long a turret takes to lock onto a target                                     |
+| TurretCanTargetVehicle    | boolean | Deployable Turrets |                    |        | Whether the turret can target vehicles                                            |
+| ForcefieldMinDamage       | float   | Forcefield         | >= 0               | Damage | Minimum damage incurred by passing through a forcefield                           |
+| ForcefieldMaxDamage       | float   | Forcefield         | >= 0               | Damage | Maximum damage incurred by passing through a forcefield                           |
+| ForcefieldMinDamageSpeed  | float   | Forcefield         | >= 0               | UU / S | The minimum speed at which damage will be dealt when passing through a forcefield |
+| ForcefieldMaxDamageSpeed  | float   | Forcefield         | >= 0               | UU / S | The speed at which the maximum forcefield damage occurs                           |
 
 ## Mines
 
