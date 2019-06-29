@@ -63,15 +63,18 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 
 #### Vehicles
 
-| Variable                               | Type  | Default | Description                                |
-|----------------------------------------|-------|---------|--------------------------------------------|
-| ServerSettings.VehicleHealthMultiplier | float | 1.0     | Multiplier affecting all vehicles' health  |
-| ServerSettings.GravCycleLimit          | int   | 4       | Number of Grav Cycles allowed per team     |
-| ServerSettings.ShrikeLimit             | int   | 2       | Number of Shrikes allowed per team         |
-| ServerSettings.BeowulfLimit            | int   | 2       | Number of Beowulfs allowed per team        |
-| ServerSettings.GravCycleSpawnTime      | int   | 30      | Generation time for Grav Cycles in seconds |
-| ServerSettings.ShrikeSpawnTime         | int   | 120     | Generation time for Shrikes in seconds     |
-| ServerSettings.BeowulfSpawnTime        | int   | 120     | Generation time for Beowulfs in seconds    |
+| Variable                               | Type    | Default | Description                                |
+| -------------------------------------- | ------- | ------- | ------------------------------------------ |
+| ServerSettings.VehicleHealthMultiplier | float   | 1.0     | Multiplier affecting all vehicles' health  |
+| ServerSettings.GravCycleLimit          | int     | 4       | Number of Grav Cycles allowed per team     |
+| ServerSettings.ShrikeLimit             | int     | 2       | Number of Shrikes allowed per team         |
+| ServerSettings.BeowulfLimit            | int     | 2       | Number of Beowulfs allowed per team        |
+| ServerSettings.GravCycleSpawnTime      | int     | 30      | Generation time for Grav Cycles in seconds |
+| ServerSettings.ShrikeSpawnTime         | int     | 120     | Generation time for Shrikes in seconds     |
+| ServerSettings.BeowulfSpawnTime        | int     | 120     | Generation time for Beowulfs in seconds    |
+| ServerSettings.GravCycleEjectionSeat   | boolean | true    | Whether Grav Cycles eject drivers on death |
+| ServerSettings.BeowulfEjectionSeat     | boolean | false   | Whether Beowulfs eject pilots on death     |
+| ServerSettings.ShrikeEjectionSeat      | boolean | false   | Whether Shrikes eject pilots on death      |
 
 #### Base
 
