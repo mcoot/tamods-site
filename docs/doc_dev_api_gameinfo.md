@@ -190,7 +190,11 @@ Gets the player's deaths.
 
 `player.score(): integer`
 
-Gets the player's current score (credits earned). In Rabbit this gives the Rabbit score.
+Gets the player's current score (total credits earned). In Rabbit this gives the Rabbit score.
+
+`player.credits(): integer`
+
+Gets the player's current credits. In OOTB this will be the same as score, since you cannot spend credits in that mode.
 
 `player.arenaSpawnsLeft(): integer`
 
