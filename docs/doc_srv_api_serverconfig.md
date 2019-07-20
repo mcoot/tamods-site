@@ -42,7 +42,7 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 #### Scoring Options
 
 | Variable                            | Type    | Default | Description                                         |
-|-------------------------------------|---------|---------|-----------------------------------------------------|
+| ----------------------------------- | ------- | ------- | --------------------------------------------------- |
 | ServerSettings.CTFCapLimit          | int     | 5       | Caps to win in CTF                                  |
 | ServerSettings.TDMKillLimit         | int     | 100     | Kills to win in TDM                                 |
 | ServerSettings.ArenaRounds          | int     | 3       | Number of rounds in Arena                           |
@@ -50,6 +50,7 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 | ServerSettings.RabbitScoreLimit     | int     | 30      | Score to win in Rabbit                              |
 | ServerSettings.CaHScoreLimit        | int     | 50      | Score to win in Capture and Hold                    |
 | ServerSettings.CTFBlitzAllFlagsMove | boolean | false   | Whether both teams' flags move after a cap in Blitz |
+| ServerSettings.TeamCredits          | boolean | false   | Whether player credits form a shared team pool      |
 
 #### Friendly Fire
 
