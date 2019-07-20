@@ -63,18 +63,22 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 
 #### Vehicles
 
-| Variable                               | Type    | Default | Description                                |
-| -------------------------------------- | ------- | ------- | ------------------------------------------ |
-| ServerSettings.VehicleHealthMultiplier | float   | 1.0     | Multiplier affecting all vehicles' health  |
-| ServerSettings.GravCycleLimit          | int     | 4       | Number of Grav Cycles allowed per team     |
-| ServerSettings.ShrikeLimit             | int     | 2       | Number of Shrikes allowed per team         |
-| ServerSettings.BeowulfLimit            | int     | 2       | Number of Beowulfs allowed per team        |
-| ServerSettings.GravCycleSpawnTime      | int     | 30      | Generation time for Grav Cycles in seconds |
-| ServerSettings.ShrikeSpawnTime         | int     | 120     | Generation time for Shrikes in seconds     |
-| ServerSettings.BeowulfSpawnTime        | int     | 120     | Generation time for Beowulfs in seconds    |
-| ServerSettings.GravCycleEjectionSeat   | boolean | true    | Whether Grav Cycles eject drivers on death |
-| ServerSettings.BeowulfEjectionSeat     | boolean | false   | Whether Beowulfs eject pilots on death     |
-| ServerSettings.ShrikeEjectionSeat      | boolean | false   | Whether Shrikes eject pilots on death      |
+| Variable                                 | Type    | Default | Description                                                                            |
+| ---------------------------------------- | ------- | ------- | -------------------------------------------------------------------------------------- |
+| ServerSettings.VehicleHealthMultiplier   | float   | 1.0     | Multiplier affecting all vehicles' health                                              |
+| ServerSettings.GravCycleLimit            | int     | 4       | Number of Grav Cycles allowed per team                                                 |
+| ServerSettings.ShrikeLimit               | int     | 2       | Number of Shrikes allowed per team                                                     |
+| ServerSettings.BeowulfLimit              | int     | 2       | Number of Beowulfs allowed per team                                                    |
+| ServerSettings.VehiclesEarnedWithCredits | bool    | false   | If true, vehicles are earned via credits (GOTY); if false, they spawn over time (OOTB) |
+| ServerSettings.GravCycleCost             | int     | 500     | Credit cost for a Grav Cycle (GOTY)                                                    |
+| ServerSettings.ShrikeCost                | int     | 4000    | Credit cost for a Shrike (GOTY)                                                        |
+| ServerSettings.BeowulfCost               | int     | 2500    | Credit cost for a Beowulf (GOTY)                                                       |
+| ServerSettings.GravCycleSpawnTime        | int     | 30      | Generation time for Grav Cycles in seconds (OOTB)                                      |
+| ServerSettings.ShrikeSpawnTime           | int     | 120     | Generation time for Shrikes in seconds (OOTB)                                          |
+| ServerSettings.BeowulfSpawnTime          | int     | 120     | Generation time for Beowulfs in seconds (OOTB)                                         |
+| ServerSettings.GravCycleEjectionSeat     | boolean | true    | Whether Grav Cycles eject drivers on death                                             |
+| ServerSettings.BeowulfEjectionSeat       | boolean | false   | Whether Beowulfs eject pilots on death                                                 |
+| ServerSettings.ShrikeEjectionSeat        | boolean | false   | Whether Shrikes eject pilots on death                                                  |
 
 #### Base
 
@@ -93,6 +97,7 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 | Variable                                   | Type    | Default | Description                                                                        |
 | ------------------------------------------ | ------- | ------- | ---------------------------------------------------------------------------------- |
 | ServerSettings.EnableInventoryCallIn       | boolean | true    | Whether inventory station call-ins are enabled                                     |
+| ServerSettings.InventoryCallInCost         | int     | 0       | Credits cost for an inventory call-in                                              |
 | ServerSettings.InventoryCallInBuildUpTime  | float   | 2       | Seconds it takes to call in an inventory station                                   |
 | ServerSettings.InventoryCallInCooldownTime | float   | 10      | Personal cooldown after calling in an inventory station before you can do so again |
 
