@@ -71,6 +71,7 @@
 <tr><td>ServerSettings.RabbitScoreLimit</td><td>int</td><td>30</td><td>Score to win in Rabbit</td></tr>
 <tr><td>ServerSettings.CaHScoreLimit</td><td>int</td><td>50</td><td>Score to win in Capture and Hold</td></tr>
 <tr><td>ServerSettings.CTFBlitzAllFlagsMove</td><td>boolean</td><td>false</td><td>Whether both teams' flags move after a cap in Blitz</td></tr>
+<tr><td>ServerSettings.TeamCredits</td><td>boolean</td><td>false</td><td>Whether player credits form a shared team pool</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="friendly-fire"></a><a href="#friendly-fire" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Friendly Fire</h4>
@@ -96,9 +97,13 @@
 <tr><td>ServerSettings.GravCycleLimit</td><td>int</td><td>4</td><td>Number of Grav Cycles allowed per team</td></tr>
 <tr><td>ServerSettings.ShrikeLimit</td><td>int</td><td>2</td><td>Number of Shrikes allowed per team</td></tr>
 <tr><td>ServerSettings.BeowulfLimit</td><td>int</td><td>2</td><td>Number of Beowulfs allowed per team</td></tr>
-<tr><td>ServerSettings.GravCycleSpawnTime</td><td>int</td><td>30</td><td>Generation time for Grav Cycles in seconds</td></tr>
-<tr><td>ServerSettings.ShrikeSpawnTime</td><td>int</td><td>120</td><td>Generation time for Shrikes in seconds</td></tr>
-<tr><td>ServerSettings.BeowulfSpawnTime</td><td>int</td><td>120</td><td>Generation time for Beowulfs in seconds</td></tr>
+<tr><td>ServerSettings.VehiclesEarnedWithCredits</td><td>bool</td><td>false</td><td>If true, vehicles are earned via credits (GOTY); if false, they spawn over time (OOTB)</td></tr>
+<tr><td>ServerSettings.GravCycleCost</td><td>int</td><td>500</td><td>Credit cost for a Grav Cycle (GOTY)</td></tr>
+<tr><td>ServerSettings.ShrikeCost</td><td>int</td><td>4000</td><td>Credit cost for a Shrike (GOTY)</td></tr>
+<tr><td>ServerSettings.BeowulfCost</td><td>int</td><td>2500</td><td>Credit cost for a Beowulf (GOTY)</td></tr>
+<tr><td>ServerSettings.GravCycleSpawnTime</td><td>int</td><td>30</td><td>Generation time for Grav Cycles in seconds (OOTB)</td></tr>
+<tr><td>ServerSettings.ShrikeSpawnTime</td><td>int</td><td>120</td><td>Generation time for Shrikes in seconds (OOTB)</td></tr>
+<tr><td>ServerSettings.BeowulfSpawnTime</td><td>int</td><td>120</td><td>Generation time for Beowulfs in seconds (OOTB)</td></tr>
 <tr><td>ServerSettings.GravCycleEjectionSeat</td><td>boolean</td><td>true</td><td>Whether Grav Cycles eject drivers on death</td></tr>
 <tr><td>ServerSettings.BeowulfEjectionSeat</td><td>boolean</td><td>false</td><td>Whether Beowulfs eject pilots on death</td></tr>
 <tr><td>ServerSettings.ShrikeEjectionSeat</td><td>boolean</td><td>false</td><td>Whether Shrikes eject pilots on death</td></tr>
@@ -126,6 +131,7 @@
 </thead>
 <tbody>
 <tr><td>ServerSettings.EnableInventoryCallIn</td><td>boolean</td><td>true</td><td>Whether inventory station call-ins are enabled</td></tr>
+<tr><td>ServerSettings.InventoryCallInCost</td><td>int</td><td>0</td><td>Credits cost for an inventory call-in</td></tr>
 <tr><td>ServerSettings.InventoryCallInBuildUpTime</td><td>float</td><td>2</td><td>Seconds it takes to call in an inventory station</td></tr>
 <tr><td>ServerSettings.InventoryCallInCooldownTime</td><td>float</td><td>10</td><td>Personal cooldown after calling in an inventory station before you can do so again</td></tr>
 </tbody>
