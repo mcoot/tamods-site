@@ -95,12 +95,25 @@ The `TeamAssignTypes` enum represents the possible approaches to team assignment
 
 #### Call-In Options
 
-| Variable                                   | Type    | Default | Description                                                                        |
-| ------------------------------------------ | ------- | ------- | ---------------------------------------------------------------------------------- |
-| ServerSettings.EnableInventoryCallIn       | boolean | true    | Whether inventory station call-ins are enabled                                     |
-| ServerSettings.InventoryCallInCost         | int     | 0       | Credits cost for an inventory call-in                                              |
-| ServerSettings.InventoryCallInBuildUpTime  | float   | 2       | Seconds it takes to call in an inventory station                                   |
-| ServerSettings.InventoryCallInCooldownTime | float   | 10      | Personal cooldown after calling in an inventory station before you can do so again |
+| Variable                                              | Type    | Default | Description                                                                        |
+| ----------------------------------------------------- | ------- | ------- | ---------------------------------------------------------------------------------- |
+| ServerSettings.EnableInventoryCallIn                  | boolean | true    | Whether inventory station call-ins are enabled                                     |
+| ServerSettings.InventoryCallInCost                    | int     | 0       | Credits cost for an inventory call-in                                              |
+| ServerSettings.InventoryCallInBuildUpTime             | float   | 2       | Seconds it takes to call in an inventory station                                   |
+| ServerSettings.InventoryCallInCooldownTime            | float   | 10      | Personal cooldown after calling in an inventory station before you can do so again |
+| ServerSettings.InventoryCallInBlocksPlayers           | boolean | true    | If false, players can pass through inventory stations without being blocked        |
+
+##### Call-In Placement Tweaks
+
+These variables tweak the collision checking used to determine if an inv station can be called at a given location.
+
+| Variable                                                  | Type  | Default | Description                                                                                         |
+| --------------------------------------------------------- | ----- | ------- | --------------------------------------------------------------------------------------------------- |
+| ServerSettings.InventoryCallInMapCollisionCheckExtent     | float | 100     | The extent (distance) around the point used to check for terrain collisions                         |
+| ServerSettings.InventoryCallInStationCollisionCheckExtent | float | 700     | The minimum distance in UU away another inv station may be when placing one                         |
+| ServerSettings.InventoryCallInTerrainMaxAngle             | float | 70      | Maximium terrain incline in degrees at which an inv station may be placed                           |
+| ServerSettings.InventoryCallInMeshMaxAngle                | float | 40      | Maximum mesh incline (e.g. a stand/base structure) in degrees at which an inv station may be placed |
+|                                                           |       |         |                                                                                                     |
 
 #### Gameplay Customisation
 

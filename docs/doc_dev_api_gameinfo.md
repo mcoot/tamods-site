@@ -288,6 +288,10 @@ Returns true if the weapon has passively reloaded.
 
 Returns true if the weapon is low on ammo.
 
+`weapon.accuracy(eqp: EquipPoint): float`
+
+Returns the current accuracy value for the weapon (as affected by e.g. spread).
+
 `weapon.reloadTime(eqp: EquipPoint): float`
 
 Gets the reload time of the weapon (in seconds), if reloaded partway through a clip.
@@ -343,6 +347,10 @@ Returns true if the player is currently zoomed in with their weapon.
 `currentWeapon.isPack(): boolean`
 
 Returns true if the current weapon is a pack item.
+
+`currentWeaponpon.accuracy(): float`
+
+Returns the current accuracy value for the current weapon (as affected by e.g. spread).
 
 `currentWeapon.reloadTime(): float`
 
