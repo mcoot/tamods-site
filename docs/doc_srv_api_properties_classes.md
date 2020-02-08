@@ -37,19 +37,20 @@ Getter and Setter functions for property values are provided.
 
 ## Movement and Skiing
 
-| Property                    | Type    | Value Restrictions | Units  | Description                                                                                                      |
-| --------------------------- | ------- | ------------------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
-| Mass                        | float   | >= 0               |        | Mass for players of this type                                                                                    |
-| GroundSpeed                 | float   | >= 0               | UU / S | Walking speed                                                                                                    |
-| MaxSkiingSpeed              | float   |                    | UU / S | Max speed achievable via skiing                                                                                  |
-| MaxSkiControl               | float   | 0 <= x <= 1        |        | Max proportion of turn control the player can have while skiing                                                  |
-| SkiControlPeakSpeed         | float   | >= 0               | UU / S | Speed at which the player has maximum turning control; the mean of the normal curve for turn control             |
-| SkiControlVariance          | float   | >= 0               |        | Variance of the normal / bell curve for turn control; larger values mean a broader speed range with high control |
-| SkiSlopeGravity             | float   | >= 0               |        | Gravity applied to the player while skiing down a slope                                                          |
-| VehicleSpeedInheritance     | float   | 0 <= x <= 1        |        | Proportion of speed to inherit when jumping out of a vehicle; affected by the vehicle's exit speed cap           |
-| MomentumDampeningEnabled    | boolean |                    |        | Whether impulse from an explosive weapon is reduced when the player is moving fast enough                        |
-| MomentumDampeningThreshold  | float   | >= 0               | UU / S | Speed threshold past which momentum dampening is active                                                          |
-| MomentumDampeningProportion | float   | 0 <= x <= 1        |        | Proportional reduction in impulse when momentum is dampened                                                      |
+| Property                    | Type    | Value Restrictions    | Units  | Description                                                                                                      |
+| --------------------------- | ------- | --------------------- | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| Mass                        | float   | >= 0                  |        | Mass for players of this type                                                                                    |
+| GroundSpeed                 | float   | >= 0                  | UU / S | Walking speed                                                                                                    |
+| MaxSkiingSpeed              | float   |                       | UU / S | Max speed achievable via skiing                                                                                  |
+| MaxSkiControl               | float   | 0 <= x <= 1           |        | Max proportion of turn control the player can have while skiing                                                  |
+| SkiControlPeakSpeed         | float   | >= 0                  | UU / S | Speed at which the player has maximum turning control; the mean of the normal curve for turn control             |
+| SkiControlVariance          | float   | >= 0                  |        | Variance of the normal / bell curve for turn control; larger values mean a broader speed range with high control |
+| SkiSlopeGravity             | float   | >= 0                  |        | Gravity applied to the player while skiing down a slope                                                          |
+| VehicleSpeedInheritance     | float   | 0 <= x <= 1           |        | Proportion of speed to inherit when jumping out of a vehicle; affected by the vehicle's exit speed cap           |
+| MomentumDampeningEnabled    | boolean |                       |        | Whether impulse from an explosive weapon is reduced when the player is moving fast enough                        |
+| MomentumDampeningThreshold  | float   | >= 0                  | UU / S | Speed threshold past which momentum dampening is active                                                          |
+| MomentumDampeningProportion | float   | 0 <= x <= 1           |        | Proportional reduction in impulse when momentum is dampened                                                      |
+| MaxHealthRegenSpeed         | float   | >= 0 (disabled if -1) | UU / S | Speed threshold above which health regen is disabled                                                             |
 
 ## Jetting and Air Control
 
