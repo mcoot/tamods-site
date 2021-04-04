@@ -10,49 +10,49 @@
     <entry>
         <title type="html"><![CDATA[TAMods hotfix v1.12 Available Now]]></title>
         <id>TAMods hotfix v1.12 Available Now</id>
-        <link href="https://mcoot.github.io/https://www.tamods.org/blog/2019/08/17/tamods-1.12"/>
+        <link href="https://mcoot.github.io/tamods-site/blog/2019/08/17/tamods-1.12"/>
         <updated>2019-08-17T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Just pushed some updates for the client TAMods DLL. Updates are focused on community servers.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[TribesLauncherSharp 1.0.0.0 Available Now]]></title>
         <id>TribesLauncherSharp 1.0.0.0 Available Now</id>
-        <link href="https://mcoot.github.io/https://www.tamods.org/blog/2019/05/19/tribeslaunchersharp-1.0.0.0"/>
+        <link href="https://mcoot.github.io/tamods-site/blog/2019/05/19/tribeslaunchersharp-1.0.0.0"/>
         <updated>2019-05-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This is the initial version of a totally rewritten TAMods Launcher. With any luck this should be substantially more straightforward to use than the existing one (although it may be somewhat less pretty).]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[TribesLauncherSharp 1.1.0.0 Available Now]]></title>
         <id>TribesLauncherSharp 1.1.0.0 Available Now</id>
-        <link href="https://mcoot.github.io/https://www.tamods.org/blog/2019/05/19/tribeslaunchersharp-1.1.0.0"/>
+        <link href="https://mcoot.github.io/tamods-site/blog/2019/05/19/tribeslaunchersharp-1.1.0.0"/>
         <updated>2019-05-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This release primarily features a new tabbed layout. It includes a couple of minor feature additions under the 'Advanced' tab, including selectable process detection mode, and custom command line arguments.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[TribesLauncherSharp 1.1.1.0 Available Now]]></title>
         <id>TribesLauncherSharp 1.1.1.0 Available Now</id>
-        <link href="https://mcoot.github.io/https://www.tamods.org/blog/2019/05/19/tribeslaunchersharp-1.1.1.0"/>
+        <link href="https://mcoot.github.io/tamods-site/blog/2019/05/19/tribeslaunchersharp-1.1.1.0"/>
         <updated>2019-05-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Hotfix to remove an unneeded debug info window, and a couple of minor UI fixes affecting Windows 7.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[TribesLauncherSharp 1.1.1.0 Available Now]]></title>
         <id>TribesLauncherSharp 1.1.1.0 Available Now</id>
-        <link href="https://mcoot.github.io/https://www.tamods.org/blog/2019/05/19/tribeslaunchersharp-1.1.2.0"/>
+        <link href="https://mcoot.github.io/tamods-site/blog/2019/05/19/tribeslaunchersharp-1.1.2.0"/>
         <updated>2019-05-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Fix to allow TLS 1.2 for update server downloads.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[TAMods v1.18 Available Now]]></title>
         <id>TAMods v1.18 Available Now</id>
-        <link href="https://mcoot.github.io/https://www.tamods.org/blog/2019/02/25/tamods-1.18"/>
+        <link href="https://mcoot.github.io/tamods-site/blog/2019/02/25/tamods-1.18"/>
         <updated>2019-02-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[For those who regularly play, particularly on the community servers, you may have noticed a couple of TAMods updates recently (versions 1.17 and 1.18).]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[TAMods v0.7 Available Now]]></title>
         <id>TAMods v0.7 Available Now</id>
-        <link href="https://mcoot.github.io/https://www.tamods.org/blog/2018/07/15/tamods-0.7"/>
+        <link href="https://mcoot.github.io/tamods-site/blog/2018/07/15/tamods-0.7"/>
         <updated>2018-07-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A new major version of TAMods, version 0.7, has now been released and is available via the TribesLauncher application.]]></summary>
     </entry>
