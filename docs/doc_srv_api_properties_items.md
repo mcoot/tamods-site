@@ -113,19 +113,19 @@ Below is an example set values and a graph:
 | MinDamageRangeProportion | 0.7   |
 | MinDamageProportion      | 0.4   |
 
-![Function describing damage done](/docs/assets/doc_srv_api_properties_items_falloff_ex1.png)
+![Function describing damage done](\img\docs\doc_srv_api_properties_items_falloff_ex1.png)
 
 Below is the graph for the (Medium) Spinfusor, for which falloff is linear over the radius of its explosion.
 
-![Function describing damage done](/docs/assets/doc_srv_api_properties_items_falloff_ex2.png)
+![Function describing damage done](\img\docs\doc_srv_api_properties_items_falloff_ex2.png)
 
 The Assault Rifle is not linear over its whole range. Note that for bullet weapons, the `BulletDamageRange`, defining its damage range is _not_ the same thing as the range for the bullet; for projectiles, total range is controlled by the `ProjectileLifespan` property (described in [Projectile and Tracer](#projectile-and-tracer) below).
 
-![Function describing damage done](/docs/assets/doc_srv_api_properties_items_falloff_ex3.png)
+![Function describing damage done](\img\docs\doc_srv_api_properties_items_falloff_ex3.png)
 
 The formula for the final proportion of the normal damage after falloff is:
 
-![Function describing damage done](/docs/assets/doc_srv_api_properties_items_falloff_eqn.png)
+![Function describing damage done](\img\docs\doc_srv_api_properties_items_falloff_eqn.png)
 
 where `x` is the distance, `r` is the damage range, `m` is the minimum damage proportion, `p_max` is the maximum range proportion and `p_min` is the minimum range proportion.
 

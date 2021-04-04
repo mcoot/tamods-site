@@ -16,7 +16,7 @@ The recommended way to get started with TAMods is to download [TribesLauncher he
 
 Extract the downloaded zip file; from here, you can run the `TribesLauncherSharp` application. The first screen you see should look something like:
 
-![TribesLauncher prior to installation](assets/doc_user_installscreen_1.png)
+![TribesLauncher prior to installation](\img\docs\doc_user_installscreen_1.png)
 
 Ensure that the `Game Path` box has the correct path to your Tribes executable. This will most commonly be either in your Steam folder (something like `C:\Program Files (x86)\Steam\SteamApps\Common\Tribes\Binaries\Win32\TribesAscend.exe`) or in the HiRez install directory (something like `C:\Program Files (x86)\HiRez Studios\HiRezGames\Tribes Ascend\Binaries\Win32\TribesAscend.exe`).
 
@@ -24,7 +24,7 @@ Ensure that the `Game Path` box has the correct path to your Tribes executable. 
 
 The button in the bottom right will prompt you to `Update` TAMods, which will perform the installation. Once the installation finishes, the button text will change to `Launch`.
 
-![TribesLauncher after installation](assets/doc_user_installscreen_2.png)
+![TribesLauncher after installation](\img\docs\doc_user_installscreen_2.png)
 
 From here you are ready to use TAMods!
 
@@ -38,21 +38,21 @@ Above the `Launch` button, a drop down selector will allow you to choose which T
 
 On the main screen, press `Launch`; the game should start. Log into Tribes as per usual. Once on the main menu, if you did not enable Auto-Inject, you will have to alt-tab out of the game to perform injection.
 
-![TribesLauncher after game launch](assets/doc_user_installscreen_3.png)
+![TribesLauncher after game launch](\img\docs\doc_user_installscreen_3.png)
 
 The bottom-right button should now say `Inject`. After pressing it, you should hear the Blue Plate Special sound, and the button should become greyed out and say `Injected`. This indicates that injection has been successful. If you see an error message, see [below](#what-to-do-if-injection-fails) for troubleshooting steps.
 
-![TribesLauncher after injection](assets/doc_user_installscreen_4.png)
+![TribesLauncher after injection](\img\docs\doc_user_installscreen_4.png)
 
 To check that the injection has worked correctly, enter a server in-game (Roam Map mode is fine). Then, open the T:A console. Note that a bug in Tribes causes the `~` key to open the Unreal Engine console rather than the T:A one; you may need to change your keybinding in the menus, under `Settings > Keybindings > Interface > Chat Console` to a different key.
 
 Once you've opened the T:A console, it should appear semi-transparent; if you scroll down you should see ASCII art indicating that TAMods is running. If you see this, it has installed correctly. If not, see [below](#what-to-do-if-injection-succeeds-but-tamods-isn-t-working) for troubleshooting steps.
 
-![Tribes with TAMods startup in the console](assets/doc_user_installscreen_5.png)
+![Tribes with TAMods startup in the console](\img\docs\doc_user_installscreen_5.png)
 
 While still in a server, hit the `F1` key. You should see a menu appear on the left-hand side of the screen, which can be controlled with the arrow keys. This is the Ubermenu and will allow you to configure many TAMods settings in-game. If you don't see this, see [below](#what-to-do-if-injection-succeeds-but-tamods-isn-t-working) for troubleshooting steps.
 
-![Tribes with the UberMenu visible](assets/doc_user_installscreen_6.png)
+![Tribes with the UberMenu visible](\img\docs\doc_user_installscreen_6.png)
 
 ### Success!
 

@@ -6,11 +6,18 @@ Using https://docusaurus.io
 
 ## Running the site
 
-```
-cd website
-npm install
+```console
+yarn install
 yarn start
 ```
+
+## Build
+
+```console
+yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
 ## Publishing the site
 
@@ -22,7 +29,7 @@ Then commit the result (don't delete the CNAME file!).
 
 Then, put the build results on the gh-pages branch with:
 
-`git subtree split --prefix website/build/tamods-site -b gh-pages`
+`git subtree split --prefix /build -b gh-pages`
 
 and force push it:
 

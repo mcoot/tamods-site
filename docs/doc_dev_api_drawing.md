@@ -44,8 +44,6 @@ The user can draw their custom Hud elements in an event handler for `onDrawCusto
 
 The Ubermenu preset defines an abstracted way to draw Hud components, handling `onDrawCustomHud` automatically.
 
-<HUD MODULES>
-
 ## Data Types and Enums
 
 ### Color Data Type
