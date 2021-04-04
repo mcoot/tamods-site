@@ -57,7 +57,7 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <header className={clsx('hero hero--light', styles.heroBanner)}>
         <div className="container">
-          <img src="/img/tamods-logo.png"/>
+        <img src={require('@site/static/img/tamods-logo.png').default} />
           <p className="hero__subtitle">{siteConfig.tagline}</p>    
           <div className={styles.buttons}>
             <Link

@@ -2,8 +2,8 @@
 module.exports = {
   title: 'TAMods',
   tagline: 'Unofficial modding support for Tribes: Ascend',
-  url: 'https://mcoot.github.io',
-  baseUrl: '/tamods-site/',
+  url: 'https://www.tamods.org/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
