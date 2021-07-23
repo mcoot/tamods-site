@@ -144,9 +144,13 @@ Sends a message to all connected modded clients which appears in the HUD, lastin
 
 Force-starts the current map if in warmup.
 
-`Admin.Game.NextMap(map: Map)`
+`Admin.Game.NextMapById(map: Map)`
 
 Overrides the map rotation such that at the next map switch, the map will be the one specified. The map should be a valid map definition as per the [Server Configuration page](doc_srv_api_serverconfig.md#maps).
+
+`Admin.Game.NextMapByFilename(mapname: string)`
+
+Overrides the map rotation such that at the next map switch, the map will be the one specified. The map should be the exact filename of a default or custom map without an extension, e.g. `TrCTF-ArxNovena`. The list of available maps can be found in your Tribes install in the `CookedPC/Maps` directory and its subdirectories.
 
 `Admin.Game.EndMap()`
 

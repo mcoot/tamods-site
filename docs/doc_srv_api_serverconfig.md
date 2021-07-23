@@ -175,7 +175,7 @@ ServerSettings.MapRotation.addCustom("TrCTF-Katabatic")
 
 ### Maps
 
-The Maps enum gives values (i.e. map codes) for all maps existing in the game, under the following namespaces:
+The Maps enum gives values (i.e. map codes) for all non-custom maps existing in the game, under the following namespaces:
 
 - `Maps.CTF`
 - `Maps.TDM`
