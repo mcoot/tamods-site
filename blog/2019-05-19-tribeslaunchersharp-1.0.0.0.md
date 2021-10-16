@@ -1,8 +1,6 @@
 ---
 title: TribesLauncherSharp 1.0.0.0 Available Now
-author: mcoot
-authorURL: http://twitter.com/
-# authorFBID: 100002976521003
+authors: mcoot
 ---
 
 This is the initial version of a totally rewritten TAMods Launcher. With any luck this should be substantially more straightforward to use than the existing one (although it may be somewhat less pretty).
