@@ -246,7 +246,6 @@ ServerSettings.MapRotation.add(Maps.Blitz.Drydock)
 ServerSettings.MapRotation.add(Maps.Blitz.Hellfire)
 ServerSettings.MapRotation.add(Maps.Blitz.IceCoaster)
 ServerSettings.MapRotation.add(Maps.Blitz.Katabatic)
-ServerSettings.MapRotation.add(Maps.Blitz.Perdition)
 ServerSettings.MapRotation.add(Maps.Blitz.Terminus)
 
 -------------- Capture and Hold --------------
