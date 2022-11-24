@@ -17,6 +17,17 @@ To create and remove roles, you can use the functions:
 
 This adds a role with the given name and password, and defines whether this role has the `canExecuteLua` permission.
 
+You can also create a "loginless" role, which uses a list of allowed users instead of a password. When a member of a role joins a server, they will automatically be logged into the role. Unverified users can not be added to a loginless role.
+
+```
+Admin.Roles.addLoginlessRole(roleName: string, canExecuteLua: boolean)
+Admin.Roles.addMember(roleName: string, userName: string)
+```
+Note that `addMember()` will only work if the role was created with `addLoginlessRole()`.
+
+To remove a role:
+
+
 `Admin.Roles.remove(name: string)`
 
 This removes the role with the given name from the pool of roles that a user may log into. It does not immediately log any users out of that role.
